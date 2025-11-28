@@ -6,8 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 	<!-- SEO Meta Tags -->
-	<title>Fiat Panda Hybrid2023 | Aggelos Rentals</title>
-	<meta name="description" content="Fiat Panda Hybrid2023 - Aggelos Rentals Πειραιάς">
+	<title>Ενοικίαση Αυτοκινήτου Πειραιά | Μηνιαία & Ημερήσια | Aggelos Rentals</title>
+	<meta name="description" content="Οικονομική ενοικίαση αυτοκινήτου στον Πειραιά. Μηνιαία ενοικίαση από €300/μήνα. Παράδοση σε λιμάνι Πειραιά & αεροδρόμιο Αθηνών. Ελληνική εξυπηρέτηση 24/7.">
 	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://aggelosrentals.com/">
 	
@@ -644,6 +644,7 @@
 	</style>
 </head>
 <body>
+	<!-- Navigation -->
 	<header class="site-header" id="siteHeader">
 		<!-- Top Bar -->
 		<div class="site-header__top">
@@ -732,34 +733,204 @@
 		</div>
 	</header>
 
-	<!-- Page Header -->
-	<section class="hero" style="min-height: 400px; background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg') center/cover;">
+	<!-- Hero Section -->
+	<section class="hero">
 		<div class="hero__container">
-			<div class="hero__content" style="max-width: 800px; text-align: center; margin: 0 auto;">
-				<h1 class="hero__title">Fiat Panda Hybrid2023</h1>
+			<div class="hero__content">
+				<h1 class="hero__title">Ενοικίαση Αυτοκινήτου Πειραιά</h1>
+				<p class="hero__subtitle">Μηνιαία & Ημερήσια Ενοικίαση | Παράδοση σε Λιμάνι & Αεροδρόμιο</p>
+				
+				<div class="hero__trust">
+					<div class="hero__trust-item">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"/>
+						</svg>
+						10+ Χρόνια Εμπειρίας
+					</div>
+					<div class="hero__trust-item">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M16 11C17.66 11 18.99 9.66 18.99 8S17.66 5 16 5 13.01 6.34 13.01 8 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8S9.66 5 8 5 5.01 6.34 5.01 8 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z"/>
+						</svg>
+						500+ Ικανοποιημένοι Πελάτες
+					</div>
+					<div class="hero__trust-item">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+						</svg>
+						24/7 Υποστήριξη
+					</div>
+				</div>
+			</div>
+			
+			<!-- Booking Form -->
+			<div class="booking-form">
+				<h2 class="booking-form__title">Κάνε Κράτηση Τώρα</h2>
+				<form action="/book" method="POST">
+					<div class="booking-form__group">
+						<label class="booking-form__label">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"/>
+							</svg>
+							Τοποθεσία Παραλαβής
+						</label>
+						<select class="booking-form__select" name="pickup_location" required>
+							<option value="">Επιλέξτε Τοποθεσία</option>
+							<option value="piraeus-port">Λιμάνι Πειραιά</option>
+							<option value="athens-airport">Αεροδρόμιο Αθηνών</option>
+							<option value="syntagma">Πλατεία Συντάγματος</option>
+							<option value="office">Κεντρικό Γραφείο</option>
+						</select>
+					</div>
+					
+					<div class="booking-form__row">
+						<div class="booking-form__group">
+							<label class="booking-form__label">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19Z"/>
+								</svg>
+								Ημερομηνία Παραλαβής
+							</label>
+							<input type="date" class="booking-form__input" name="pickup_date" required>
+						</div>
+						<div class="booking-form__group">
+							<label class="booking-form__label">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+								</svg>
+								Ώρα
+							</label>
+							<input type="time" class="booking-form__input" name="pickup_time" value="10:00" required>
+						</div>
+					</div>
+					
+					<div class="booking-form__row">
+						<div class="booking-form__group">
+							<label class="booking-form__label">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19Z"/>
+								</svg>
+								Ημερομηνία Επιστροφής
+							</label>
+							<input type="date" class="booking-form__input" name="return_date" required>
+						</div>
+						<div class="booking-form__group">
+							<label class="booking-form__label">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+									<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+								</svg>
+								Ώρα
+							</label>
+							<input type="time" class="booking-form__input" name="return_time" value="10:00" required>
+						</div>
+					</div>
+					
+					<button type="submit" class="booking-form__submit">
+						Έλεγχος Διαθεσιμότητας
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M9 5L16 12L9 19"/>
+						</svg>
+					</button>
+				</form>
 			</div>
 		</div>
 	</section>
 
-	<!-- Page Content -->
+	<!-- Benefits Section -->
 	<section class="benefits">
-		<div class="container" style="max-width: 1000px;">
-			<h2 class="section-title">Fiat Panda Hybrid2023</h2><p style="text-align: center; color: #6b7280;">Σελίδα σε ανάπτυξη. Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες.</p>
+		<div class="container">
+			<h2 class="section-title">Γιατί να Επιλέξετε Εμάς</h2>
+			
+			<div class="benefits__grid">
+				<div class="benefit-card">
+					<div class="benefit-card__icon">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/>
+						</svg>
+					</div>
+					<h3 class="benefit-card__title">Χωρίς Πιστωτική Κάρτα</h3>
+					<p class="benefit-card__desc">Δεκτά μετρητά και κάρτες. Ευέλικτες επιλογές πληρωμής για την άνεσή σας.</p>
+				</div>
+				
+				<div class="benefit-card">
+					<div class="benefit-card__icon">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+						</svg>
+					</div>
+					<h3 class="benefit-card__title">Παράδοση σε 30 Λεπτά</h3>
+					<p class="benefit-card__desc">Γρήγορη παράδοση στο λιμάνι Πειραιά ή το αεροδρόμιο Αθηνών.</p>
+				</div>
+				
+				<div class="benefit-card">
+					<div class="benefit-card__icon">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+						</svg>
+					</div>
+					<h3 class="benefit-card__title">Μηνιαία Ενοικίαση από €300</h3>
+					<p class="benefit-card__desc">Οικονομικές μηνιαίες τιμές με πλήρη ασφάλεια και υποστήριξη.</p>
+				</div>
+				
+				<div class="benefit-card">
+					<div class="benefit-card__icon">
+						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+						</svg>
+					</div>
+					<h3 class="benefit-card__title">Ελληνική Εξυπηρέτηση 24/7</h3>
+					<p class="benefit-card__desc">Πάντα εδώ για να σας βοηθήσουμε, στα ελληνικά, όποτε μας χρειαστείτε.</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- CTA Section -->
+	<!-- Monthly Rental CTA -->
 	<section class="monthly-cta">
 		<div class="monthly-cta__container">
-			<h2 class="monthly-cta__title">Έτοιμοι να Ενοικιάσετε Αυτοκίνητο;</h2>
-			<p class="monthly-cta__subtitle">Επικοινωνήστε μαζί μας σήμερα για την καλύτερη προσφορά</p>
+			<h2 class="monthly-cta__title">Μηνιαία Ενοικίαση Αυτοκινήτου</h2>
+			<p class="monthly-cta__subtitle">Η καλύτερη επιλογή για μακροχρόνιες ανάγκες</p>
 			
-			<div class="monthly-cta__buttons" style="margin-top: 30px;">
-				<a href="tel:+306980151068" class="btn btn-primary">
+			<div class="monthly-cta__price">από €300/μήνα</div>
+			
+			<div class="monthly-cta__features">
+				<div class="monthly-cta__feature">
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+					</svg>
+					Χωρίς Κρυφές Χρεώσεις
+				</div>
+				<div class="monthly-cta__feature">
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+					</svg>
+					Πλήρης Ασφάλεια
+				</div>
+				<div class="monthly-cta__feature">
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+					</svg>
+					Χιλιόμετρα Χωρίς Όριο
+				</div>
+				<div class="monthly-cta__feature">
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+					</svg>
+					Δωρεάν Παράδοση
+				</div>
+			</div>
+			
+			<div class="monthly-cta__buttons">
+				<a href="/athens-monthly-car-rentals/" class="btn btn-primary">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z"/>
+					</svg>
+					Δείτε Διαθέσιμα Αυτοκίνητα
+				</a>
+				<a href="tel:+306980151068" class="btn btn-secondary">
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
 					</svg>
-					Καλέστε Μας: +30 698 015 1068
+					Καλέστε Μας Τώρα
 				</a>
 				<a href="https://wa.me/306980151068" class="btn btn-secondary">
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -767,17 +938,11 @@
 					</svg>
 					WhatsApp
 				</a>
-				<a href="/" class="btn btn-secondary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-						<polyline points="9 22 9 12 15 12 15 22"></polyline>
-					</svg>
-					Επιστροφή στην Αρχική
-				</a>
 			</div>
 		</div>
 	</section>
 
+	<!-- Footer -->
 	<footer class="modern-footer">
 		<div class="footer-container">
 			<div class="footer-grid">
@@ -892,6 +1057,6 @@
 			}
 		})();
 	</script>
-
 </body>
 </html>
+

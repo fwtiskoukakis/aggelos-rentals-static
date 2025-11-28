@@ -7,7 +7,7 @@
 	
 	<!-- SEO Meta Tags -->
 	<title>Ενοικίαση Αυτοκινήτου Πειραιά | Μηνιαία & Ημερήσια | Aggelos Rentals</title>
-	<meta name="description" content="Οικονομική ενοικίαση αυτοκινήτου στον Πειραιά. Μηνιαία ενοικίαση από €300/μήνα. Παράδοση σε λιμάνι Πειραιά & αεροδρόμιο Αθηνών. Ελληνική εξυπηρέτηση 24/7.">
+	<meta name="description" content="Οικονομική ενοικίαση αυτοκινήτου στον Πειραιά. Μηνιαία ενοικίαση από €350/μήνα. Παράδοση σε λιμάνι Πειραιά & αεροδρόμιο Αθηνών. Ελληνική εξυπηρέτηση 24/7. Χωρίς πιστωτική κάρτα."
 	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://aggelosrentals.com/">
 	
@@ -15,7 +15,7 @@
 	<meta property="og:locale" content="el_GR">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Ενοικίαση Αυτοκινήτου Πειραιά | Aggelos Rentals">
-	<meta property="og:description" content="Οικονομική ενοικίαση αυτοκινήτου με παράδοση σε λιμάνι & αεροδρόμιο. Μηνιαία ενοικίαση από €300/μήνα.">
+	<meta property="og:description" content="Οικονομική ενοικίαση αυτοκινήτου με παράδοση σε λιμάνι & αεροδρόμιο. Μηνιαία ενοικίαση από €350/μήνα. Χωρίς πιστωτική κάρτα."
 	<meta property="og:url" content="https://aggelosrentals.com/">
 	<meta property="og:site_name" content="Aggelos Rentals">
 	<meta property="og:image" content="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg">
@@ -24,29 +24,160 @@
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "CarRental",
-		"name": "Aggelos Rentals",
-		"description": "Ενοικίαση αυτοκινήτου στον Πειραιά με παράδοση σε λιμάνι και αεροδρόμιο",
-		"url": "https://aggelosrentals.com",
-		"telephone": "+30-698-015-1068",
-		"email": "piraeus@aggelosrentals.com",
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Πειραιάς",
-			"addressRegion": "Αττική",
-			"addressCountry": "GR"
-		},
-		"geo": {
-			"@type": "GeoCoordinates",
-			"latitude": "37.9413",
-			"longitude": "23.6474"
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "4.8",
-			"reviewCount": "238"
-		},
-		"priceRange": "€€"
+		"@graph": [
+			{
+				"@type": "CarRental",
+				"@id": "https://aggelosrentals.com/#carrental",
+				"name": "Aggelos Rentals",
+				"description": "Ενοικίαση αυτοκινήτου στον Πειραιά με παράδοση σε λιμάνι και αεροδρόμιο. Μηνιαία και ημερήσια ενοικίαση.",
+				"url": "https://aggelosrentals.com",
+				"telephone": "+30-698-015-1068",
+				"email": "piraeus@aggelosrentals.com",
+				"image": "https://aggelosrentals.com/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Ακτή Θεμιστοκλέους",
+					"addressLocality": "Πειραιάς",
+					"addressRegion": "Αττική",
+					"postalCode": "185 39",
+					"addressCountry": "GR"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": "37.9413",
+					"longitude": "23.6474"
+				},
+				"openingHoursSpecification": {
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+					"opens": "00:00",
+					"closes": "23:59"
+				},
+				"aggregateRating": {
+					"@type": "AggregateRating",
+					"ratingValue": "4.8",
+					"reviewCount": "238",
+					"bestRating": "5",
+					"worstRating": "1"
+				},
+				"priceRange": "€€",
+				"paymentAccepted": "Cash, Credit Card, Debit Card",
+				"areaServed": [
+					{"@type": "City", "name": "Πειραιάς"},
+					{"@type": "City", "name": "Αθήνα"},
+					{"@type": "Place", "name": "Αεροδρόμιο Αθηνών"}
+				],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Υπηρεσίες Ενοικίασης Αυτοκινήτων",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Ημερήσια Ενοικίαση Αυτοκινήτου"
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Service",
+								"name": "Μηνιαία Ενοικίαση Αυτοκινήτου"
+							}
+						}
+					]
+				}
+			},
+			{
+				"@type": "LocalBusiness",
+				"@id": "https://aggelosrentals.com/#localbusiness",
+				"name": "Aggelos Rentals",
+				"alternateName": "Άγγελος Rentals",
+				"description": "Επαγγελματική ενοικίαση αυτοκινήτων στον Πειραιά με 10+ χρόνια εμπειρίας",
+				"url": "https://aggelosrentals.com",
+				"telephone": "+30-698-015-1068",
+				"email": "piraeus@aggelosrentals.com",
+				"priceRange": "€35 - €150 (ημερήσια), €350 - €1200 (μηνιαία)",
+				"image": [
+					"https://aggelosrentals.com/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg",
+					"https://aggelosrentals.com/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg",
+					"https://aggelosrentals.com/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg"
+				],
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Ακτή Θεμιστοκλέους",
+					"addressLocality": "Πειραιάς",
+					"addressRegion": "Αττική",
+					"postalCode": "185 39",
+					"addressCountry": "GR"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": "37.9413",
+					"longitude": "23.6474"
+				},
+				"hasMap": "https://www.google.com/maps/place/Piraeus,+Greece/@37.9413,23.6474",
+				"openingHours": "Mo-Su 00:00-23:59",
+				"sameAs": [
+					"https://www.facebook.com/aggelosrentals",
+					"https://www.instagram.com/aggelosrentals"
+				]
+			},
+			{
+				"@type": "FAQPage",
+				"@id": "https://aggelosrentals.com/#faq",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "Ποια είναι η ελάχιστη διάρκεια ενοικίασης;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Η ελάχιστη διάρκεια ενοικίασης είναι 1 ημέρα για ημερήσια ενοικίαση και 1 μήνας για μηνιαία ενοικίαση. Προσφέρουμε ειδικές τιμές για μακροχρόνιες ενοικιάσεις."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Τι χρειάζομαι για να ενοικιάσω αυτοκίνητο;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Χρειάζεστε έγκυρη άδεια οδήγησης (τουλάχιστον 1 έτος), ταυτότητα ή διαβατήριο. Για μηνιαία ενοικίαση δεχόμαστε μετρητά και κάρτες. Δεν απαιτείται πιστωτική κάρτα."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Κάνετε παράδοση στο λιμάνι Πειραιά;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Ναι! Κάνουμε δωρεάν παράδοση στο λιμάνι Πειραιά, αεροδρόμιο Αθηνών και άλλες τοποθεσίες εντός Αθηνών. Η παράδοση γίνεται σε 20-30 λεπτά από την κλήση σας."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Τι περιλαμβάνει η μηνιαία ενοικίαση;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Η μηνιαία ενοικίαση περιλαμβάνει πλήρη ασφάλεια, 2000 km/μήνα, 24/7 υποστήριξη, δωρεάν παράδοση και παραλαβή, και συντήρηση του οχήματος."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Υπάρχει όριο χιλιομέτρων;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Για μηνιαία ενοικίαση το όριο είναι 2000 km/μήνα. Για ημερήσια ενοικίαση το όριο είναι 120 km/ημέρα. Επιπλέον χιλιόμετρα χρεώνονται ξεχωριστά."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Τι γίνεται αν ξεπεράσω τα χιλιόμετρα;",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Τα επιπλέον χιλιόμετρα πέρα από το όριο (120 km/ημέρα ή 2000 km/μήνα) χρεώνονται με πρόσθετο κόστος. Επικοινωνήστε μαζί μας για ακριβείς τιμές και ειδικά πακέτα."
+						}
+					}
+				]
+			}
+		]
 	}
 	</script>
 	
@@ -977,12 +1108,18 @@
 			<h2 class="section-title">Δημοφιλή Οχήματα</h2>
 			
 		<div class="benefits__grid">
-		<div class="benefit-card">
-			<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg" alt="Fiat Panda Hybrid 2023" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
-			<h3 class="benefit-card__title">Fiat Panda Hybrid</h3>
-			<p class="benefit-card__desc">
+		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+			<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Fiat Panda Hybrid 2023 Πειραιάς - €35 ημερησίως, €450 μηνιαίως" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
+			<h3 class="benefit-card__title" itemprop="name">Fiat Panda Hybrid</h3>
+			<p class="benefit-card__desc" itemprop="description">
 				Οικονομικό & Οικολογικό<br>
-				<strong style="color: #2563eb; font-size: 1.5rem;">€35/ημέρα</strong> | <strong style="color: #10b981; font-size: 1.3rem;">€450/μήνα</strong><br>
+				<span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #2563eb; font-size: 1.5rem;">€<span itemprop="price">35</span>/ημέρα</strong>
+				</span> | <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #10b981; font-size: 1.3rem;">€<span itemprop="price">450</span>/μήνα</strong>
+				</span><br>
 				<span style="font-size: 0.85rem; color: #6b7280;">120 km/ημέρα | 2000 km/μήνα</span>
 			</p>
 			<div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
@@ -990,15 +1127,23 @@
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">⚙️ Χειροκίνητο</span>
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">❄️ A/C</span>
 			</div>
+			<meta itemprop="brand" content="Fiat">
+			<meta itemprop="model" content="Panda Hybrid">
 			<a href="/product-category/rental/car/" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Κράτηση</a>
 		</div>
 		
-		<div class="benefit-card">
-			<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg" alt="Jeep Renegade" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
-			<h3 class="benefit-card__title">Jeep Renegade</h3>
-			<p class="benefit-card__desc">
+		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+			<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Jeep Renegade Πειραιάς - €80 ημερησίως, €750 μηνιαίως, Αυτόματο SUV" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
+			<h3 class="benefit-card__title" itemprop="name">Jeep Renegade</h3>
+			<p class="benefit-card__desc" itemprop="description">
 				SUV με Στυλ & Άνεση<br>
-				<strong style="color: #2563eb; font-size: 1.5rem;">€80/ημέρα</strong> | <strong style="color: #10b981; font-size: 1.3rem;">€750/μήνα</strong><br>
+				<span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #2563eb; font-size: 1.5rem;">€<span itemprop="price">80</span>/ημέρα</strong>
+				</span> | <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #10b981; font-size: 1.3rem;">€<span itemprop="price">750</span>/μήνα</strong>
+				</span><br>
 				<span style="font-size: 0.85rem; color: #6b7280;">120 km/ημέρα | 2000 km/μήνα</span>
 			</p>
 			<div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
@@ -1006,15 +1151,23 @@
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">🔄 Αυτόματο</span>
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">❄️ A/C</span>
 			</div>
+			<meta itemprop="brand" content="Jeep">
+			<meta itemprop="model" content="Renegade">
 			<a href="/product-category/rental/car/" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Κράτηση</a>
 		</div>
 		
-		<div class="benefit-card">
-			<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg" alt="Mercedes Benz A-Class" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
-			<h3 class="benefit-card__title">Mercedes Benz A-Class</h3>
-			<p class="benefit-card__desc">
+		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+			<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Mercedes Benz A-Class Πειραιάς - €150 ημερησίως, €1200 μηνιαίως, Luxury Αυτόματο" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0; margin: -40px -30px 20px;">
+			<h3 class="benefit-card__title" itemprop="name">Mercedes Benz A-Class</h3>
+			<p class="benefit-card__desc" itemprop="description">
 				Πολυτέλεια & Κομψότητα<br>
-				<strong style="color: #2563eb; font-size: 1.5rem;">€150/ημέρα</strong> | <strong style="color: #10b981; font-size: 1.3rem;">€1200/μήνα</strong><br>
+				<span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #2563eb; font-size: 1.5rem;">€<span itemprop="price">150</span>/ημέρα</strong>
+				</span> | <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+					<meta itemprop="priceCurrency" content="EUR">
+					<strong style="color: #10b981; font-size: 1.3rem;">€<span itemprop="price">1200</span>/μήνα</strong>
+				</span><br>
 				<span style="font-size: 0.85rem; color: #6b7280;">120 km/ημέρα | 2000 km/μήνα</span>
 			</p>
 			<div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
@@ -1022,6 +1175,8 @@
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">🔄 Αυτόματο</span>
 				<span style="background: #f3f4f6; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; color: #6b7280;">❄️ A/C</span>
 			</div>
+			<meta itemprop="brand" content="Mercedes-Benz">
+			<meta itemprop="model" content="A-Class">
 			<a href="/product-category/rental/car/" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Κράτηση</a>
 		</div>
 		</div>

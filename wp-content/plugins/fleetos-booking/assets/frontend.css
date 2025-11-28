@@ -1,0 +1,685 @@
+/**
+ * FleetOS Booking Form - Modern Commercial Design
+ */
+
+.fleetos-booking-form-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 10px 0;
+    overflow: visible;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fleetos-booking-form-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    z-index: 2;
+}
+
+.fleetos-booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Progress Indicator */
+.fleetos-progress-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.fleetos-progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fleetos-progress-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    border: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    color: #9ca3af;
+    transition: all 0.3s;
+}
+
+.fleetos-progress-step.active .fleetos-progress-number {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.fleetos-progress-text {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.fleetos-progress-step.active .fleetos-progress-text {
+    color: #3b82f6;
+}
+
+.fleetos-progress-line {
+    width: 50px;
+    height: 2px;
+    background: #e5e7eb;
+    margin-top: -18px;
+}
+
+/* Trust Elements */
+.fleetos-trust-elements {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.fleetos-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.fleetos-trust-item svg {
+    width: 16px;
+    height: 16px;
+    color: #6366f1;
+}
+
+/* Vehicle Type Selector - Compact Design */
+.fleetos-vehicle-type-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.fleetos-vehicle-type-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 8px;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transform: scale(1);
+}
+
+.fleetos-vehicle-type-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05));
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 8px;
+}
+
+.fleetos-vehicle-type-item:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
+}
+
+.fleetos-vehicle-type-item:hover::before {
+    opacity: 1;
+}
+
+.fleetos-vehicle-type-item.active {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white;
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.4), 0 2px 8px rgba(59, 130, 246, 0.3);
+    transform: scale(1.05);
+    animation: vehicleSelectPulse 0.3s ease-out;
+}
+
+@keyframes vehicleSelectPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.fleetos-vehicle-type-item.active::before {
+    opacity: 0;
+}
+
+.fleetos-vehicle-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.fleetos-vehicle-type-item:hover .fleetos-vehicle-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.fleetos-vehicle-type-item.active .fleetos-vehicle-icon {
+    transform: scale(1.1);
+    animation: iconBounce 0.5s ease-out;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+}
+
+.fleetos-vehicle-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.fleetos-vehicle-type-item.active .fleetos-vehicle-icon svg {
+    filter: brightness(0) invert(1);
+}
+
+.fleetos-vehicle-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #4b5563;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.fleetos-vehicle-type-item.active .fleetos-vehicle-label {
+    color: white;
+}
+
+/* Compact Form */
+.fleetos-form-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Floating card style for form groups */
+.fleetos-form-row-compact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.fleetos-form-group-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Standalone form group cards (like pickup location) */
+.fleetos-form-compact > .fleetos-form-group-compact {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.fleetos-label-compact {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #111827;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    transform: none;
+    transition: none;
+}
+
+.fleetos-label-compact svg {
+    width: 16px;
+    height: 16px;
+    color: #6366f1;
+}
+
+.fleetos-input-compact {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(229, 231, 235, 0.8);
+    border-radius: 10px;
+    font-size: 14px;
+    color: #111827;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.fleetos-input-compact:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 
+        0 0 0 4px rgba(59, 130, 246, 0.1),
+        0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-1px);
+}
+
+.fleetos-input-compact:valid {
+    border-color: #10b981;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981' width='20' height='20'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+.fleetos-form-group-compact:focus-within .fleetos-label-compact {
+    color: #3b82f6;
+}
+
+.fleetos-label-compact:hover {
+    color: #3b82f6;
+}
+
+.fleetos-input-compact::placeholder {
+    color: #9ca3af;
+}
+
+.fleetos-date-time-group {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6px;
+}
+
+.fleetos-date-time-group .fleetos-input-compact {
+    border-radius: 12px;
+}
+
+.fleetos-form-group-compact {
+    position: relative;
+}
+
+/* Checkbox Toggle */
+.fleetos-dropoff-location-toggle {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    margin-top: 0;
+}
+
+.fleetos-dropoff-location-wrapper {
+    margin-top: 20px;
+}
+
+.fleetos-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fleetos-checkbox-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.fleetos-checkbox-custom {
+    width: 44px;
+    height: 24px;
+    background: #e5e7eb;
+    border-radius: 12px;
+    position: relative;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.fleetos-checkbox-custom::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fleetos-checkbox-label input[type="checkbox"]:checked + .fleetos-checkbox-custom {
+    background: #3b82f6;
+}
+
+.fleetos-checkbox-label input[type="checkbox"]:checked + .fleetos-checkbox-custom::after {
+    transform: translateX(20px);
+}
+
+.fleetos-checkbox-text {
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.fleetos-dropoff-location-wrapper {
+    animation: slideDown 0.3s ease-out;
+}
+
+.fleetos-dropoff-location-wrapper .fleetos-form-group-compact {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Submit Button - Enhanced CTA */
+.fleetos-submit-button-modern {
+    width: 100%;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 
+        0 12px 32px rgba(59, 130, 246, 0.4),
+        0 6px 16px rgba(59, 130, 246, 0.3);
+    margin-top: 12px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 
+            0 12px 32px rgba(59, 130, 246, 0.4),
+            0 6px 16px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 16px 40px rgba(59, 130, 246, 0.5),
+            0 8px 20px rgba(59, 130, 246, 0.4),
+            0 0 0 8px rgba(59, 130, 246, 0.1);
+    }
+}
+
+.fleetos-submit-button-modern::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.fleetos-submit-button-modern:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.fleetos-submit-button-modern:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 16px 40px rgba(59, 130, 246, 0.5),
+        0 8px 20px rgba(59, 130, 246, 0.4),
+        0 0 0 8px rgba(59, 130, 246, 0.15);
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+}
+
+.fleetos-submit-button-modern:active {
+    transform: translateY(-1px) scale(1);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.fleetos-submit-button-modern svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.fleetos-submit-button-modern span {
+    position: relative;
+    z-index: 1;
+}
+
+.fleetos-submit-button-modern:hover svg {
+    transform: translateX(6px);
+    animation: arrowSlide 0.6s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+    0%, 100% {
+        transform: translateX(6px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.fleetos-submit-button-modern:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fleetos-booking-form-wrapper {
+        padding: 10px 15px;
+    }
+    
+    .fleetos-progress-indicator {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+    
+    .fleetos-vehicle-type-selector {
+        gap: 5px;
+        padding: 10px;
+    }
+    
+    .fleetos-vehicle-type-item {
+        padding: 8px 6px;
+        gap: 4px;
+    }
+    
+    .fleetos-vehicle-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .fleetos-vehicle-label {
+        font-size: 10px;
+    }
+    
+    .fleetos-form-row-compact {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+    }
+    
+    .fleetos-form-compact > .fleetos-form-group-compact {
+        padding: 12px;
+    }
+    
+    .fleetos-date-time-group {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 5px;
+    }
+    
+    .fleetos-submit-button-modern {
+        padding: 14px 24px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    
+    .fleetos-trust-elements {
+        margin-top: 10px;
+        padding: 8px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fleetos-booking-form-wrapper {
+        padding: 8px 10px;
+    }
+    
+    .fleetos-progress-indicator {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .fleetos-progress-number {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+    
+    .fleetos-progress-text {
+        font-size: 9px;
+    }
+    
+    .fleetos-vehicle-type-item {
+        padding: 6px 4px;
+    }
+    
+    .fleetos-vehicle-icon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .fleetos-vehicle-label {
+        font-size: 9px;
+    }
+    
+    .fleetos-label-compact {
+        font-size: 11px;
+        padding: 5px 10px;
+        margin-bottom: 6px;
+    }
+    
+    .fleetos-input-compact {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .fleetos-submit-button-modern {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+

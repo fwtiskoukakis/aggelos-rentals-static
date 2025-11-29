@@ -3,130 +3,311 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- ==================== -->
+  <!-- HOMEPAGE -->
+  <!-- ==================== -->
   <url>
     <loc>https://aggelosrentals.com/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aggelosrentals.com/" />
+    <image:image>
+      <image:loc>https://aggelosrentals.com/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg</image:loc>
+      <image:title>Ενοικίαση Αυτοκινήτου Πειραιάς - Aggelos Rentals</image:title>
+    </image:image>
   </url>
   
-  <!-- Fleet Page -->
+  <!-- ==================== -->
+  <!-- CORE SERVICE PAGES -->
+  <!-- ==================== -->
   <url>
     <loc>https://aggelosrentals.com/product-category/rental/car/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://aggelosrentals.com/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg</image:loc>
+      <image:title>Στόλος Οχημάτων - Aggelos Rentals Piraeus</image:title>
+    </image:image>
   </url>
   
-  <!-- Monthly Rentals -->
   <url>
     <loc>https://aggelosrentals.com/athens-monthly-car-rentals/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- About -->
+  <url>
+    <loc>https://aggelosrentals.com/shop/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- LOCATION PAGES - ENGLISH -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://aggelosrentals.com/location/piraeus-port/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/location/athens-airport/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/location/any-location-in-athens/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/location/akti-themistokleous-104/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- LOCATION PAGES - GREEK -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://aggelosrentals.com/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BB%CE%B9%CE%BC%CE%B1%CE%BD%CE%B9-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%B1%CE%B5%CF%81%CE%BF%CE%B4%CF%81%CE%BF%CE%BC%CE%B9%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BA%CE%B5%CE%BD%CF%84%CF%81%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1-%CE%BC%CE%B7%CE%BD%CE%B9%CE%B1%CE%B9%CE%B1-%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- VEHICLE TYPE PAGES -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://aggelosrentals.com/gearbox/automatic/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/gearbox/manual/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/type/suv/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/type/economy/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/type/luxury/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- MANUFACTURER PAGES -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://aggelosrentals.com/manufacturer/fiat/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/manufacturer/jeep/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- INFORMATIONAL PAGES -->
+  <!-- ==================== -->
   <url>
     <loc>https://aggelosrentals.com/about/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- FAQ -->
   <url>
     <loc>https://aggelosrentals.com/faq/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/contact/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- ==================== -->
+  <!-- BLOG -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://aggelosrentals.com/blog/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/blog/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1%CF%82-%CE%BF%CE%B4%CE%B7%CE%B3%CE%BF%CF%82-2025/</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Contact -->
+  <!-- ==================== -->
+  <!-- VEHICLE PAGES -->
+  <!-- ==================== -->
   <url>
-    <loc>https://aggelosrentals.com/contact/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <loc>https://aggelosrentals.com/vehicle/fiat-panda/</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Vehicle Categories -->
-  <url>
-    <loc>https://aggelosrentals.com/product-category/rental/car/fiat/</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://aggelosrentals.com/product-category/rental/car/jeep/</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://aggelosrentals.com/vehicle/jeep-renegade/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
-  <!-- Blog -->
   <url>
-    <loc>https://aggelosrentals.com/blog/</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://aggelosrentals.com/vehicle/mercedes-a-class/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
-  <!-- Privacy & Terms -->
+  <!-- ==================== -->
+  <!-- LEGAL PAGES -->
+  <!-- ==================== -->
   <url>
     <loc>https://aggelosrentals.com/privacy-policy-2/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://aggelosrentals.com/terms-and-conditions/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
-  <!-- Greek Monthly Rentals Page -->
+  <!-- ==================== -->
+  <!-- SPECIAL LANDING PAGES -->
+  <!-- ==================== -->
   <url>
-    <loc>https://aggelosrentals.com/αθηνα-μηνιαια-ενοικιαση-αυτοκινητου/</loc>
-    <lastmod>2025-11-28</lastmod>
+    <loc>https://aggelosrentals.com/athens-airport-to-piraeus/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/piraeus-port-car-rental/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/automatic-car-rental-piraeus/</loc>
+    <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Location Pages -->
   <url>
-    <loc>https://aggelosrentals.com/ενοικιαση-αυτοκινητου-λιμανι-πειραια/</loc>
+    <loc>https://aggelosrentals.com/cruise-port-car-rental/</loc>
     <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aggelosrentals.com/ενοικιαση-αυτοκινητου-αεροδρομιο-αθηνας/</loc>
+    <loc>https://aggelosrentals.com/suv-rental-piraeus/</loc>
     <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://aggelosrentals.com/ενοικιαση-αυτοκινητου-κεντρο-αθηνας/</loc>
+    <loc>https://aggelosrentals.com/piraeus-car-rental-prices/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://aggelosrentals.com/athens-airport-to-piraeus/</loc>
     <lastmod>2025-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/athens-airport-to-piraeus/" />
   </url>
   
-  <!-- Blog Posts -->
+  <!-- ==================== -->
+  <!-- LLM/AI FILE -->
+  <!-- ==================== -->
   <url>
-    <loc>https://aggelosrentals.com/blog/ενοικιαση-αυτοκινητου-πειραιας-οδηγος-2025/</loc>
+    <loc>https://aggelosrentals.com/llms.txt</loc>
     <lastmod>2025-11-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.4</priority>
   </url>
   
 </urlset>

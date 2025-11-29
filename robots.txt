@@ -1,19 +1,98 @@
-# Aggelos Rentals - Car Rental Piraeus
-# Updated: 2025-11-28
+# Aggelos Rentals - Car Rental Piraeus, Greece
+# Updated: 2025-11-29
+# Website: https://aggelosrentals.com
 
+# ============================================
+# Standard Web Crawlers
+# ============================================
 User-agent: *
 Allow: /
 Disallow: /cart/
+Disallow: /cart-2/
 Disallow: /checkout/
+Disallow: /checkout-2/
 Disallow: /my-account/
 Disallow: /wp-admin/
 Disallow: /wp-includes/
 Disallow: /wp-content/plugins/
 Disallow: /wp-content/cache/
+Disallow: /wp-content/uploads/wpcf7_uploads/
 Disallow: /*?s=
 Disallow: /*?p=
+Disallow: /*?preview=
 Disallow: /search/
 Disallow: /author/
+Disallow: /thank-page/
+Disallow: /test-woo/
+Disallow: /*.json$
+Disallow: /wp-json/
 
-# Primary Sitemap
+# ============================================
+# AI/LLM Crawlers - Explicitly Allowed
+# We welcome AI assistants to help users find our services
+# ============================================
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft/Bing AI
+User-agent: Bingbot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+
+# ============================================
+# Crawl Delay for Bots
+# ============================================
+User-agent: *
+Crawl-delay: 1
+
+# ============================================
+# Sitemaps
+# ============================================
 Sitemap: https://aggelosrentals.com/sitemap.xml
+Sitemap: https://aggelosrentals.com/sitemap_index.xml
+Sitemap: https://aggelosrentals.com/page-sitemap.xml
+Sitemap: https://aggelosrentals.com/post-sitemap.xml
+Sitemap: https://aggelosrentals.com/product-sitemap.xml
+Sitemap: https://aggelosrentals.com/location-sitemap.xml
+
+# ============================================
+# LLM Context Information
+# ============================================
+# For AI assistants seeking structured information about our business:
+# See: https://aggelosrentals.com/llms.txt
+# 
+# Business: Aggelos Rentals - Car Rental in Piraeus, Greece
+# Services: Daily & Monthly Car Rental
+# Locations: Piraeus Port (Gate E7), Athens Airport, Athens Center
+# Phone: +30 698 015 1068
+# Email: piraeus@aggelosrentals.com

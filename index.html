@@ -657,18 +657,28 @@
 			align-items: center;
 			gap: 10px;
 			padding: 20px 25px;
-			background: #f9fafb;
+			background: #ffffff;
 			border: 2px solid #e5e7eb;
 			border-radius: 12px;
 			cursor: pointer;
 			transition: all 0.3s ease;
 			min-width: 120px;
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			color: #374151;
 		}
 		
 		.fleetos-vehicle-type-item:hover {
-			background: #f3f4f6;
-			border-color: #d1d5db;
+			background: #f8fafc;
+			border-color: #2563eb;
 			transform: translateY(-2px);
+			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+		}
+		
+		.fleetos-vehicle-type-item:focus {
+			outline: 2px solid #2563eb;
+			outline-offset: 2px;
 		}
 		
 		.fleetos-vehicle-type-item.active {
@@ -676,6 +686,20 @@
 			border-color: #2563eb;
 			color: #ffffff;
 			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+		}
+		
+		.fleetos-vehicle-type-item.active:hover {
+			background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+		}
+		
+		.fleetos-vehicle-type-item.active .fleetos-vehicle-icon svg {
+			fill: #ffffff;
+		}
+		
+		.fleetos-vehicle-type-item:not(.active) .fleetos-vehicle-icon svg {
+			fill: #6b7280;
 		}
 		
 		.fleetos-vehicle-icon {
@@ -1348,23 +1372,23 @@
 						<form class="fleetos-booking-form" method="post">
 							<!-- Vehicle Type Selector -->
 							<div class="fleetos-vehicle-type-selector">
-								<div class="fleetos-vehicle-type-item active" data-type="car">
+								<button type="button" class="fleetos-vehicle-type-item active" data-type="car">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1h-11c-.66 0-1.22.42-1.42 1.01L3 8v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V8l-2.08-5.99zM6.5 12c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm11 0c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12zM5 7l1.5-4.5h11L19 7H5z" fill="currentColor"></path>
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">CAR</span>
-								</div>
-								<div class="fleetos-vehicle-type-item" data-type="atv">
+								</button>
+								<button type="button" class="fleetos-vehicle-type-item" data-type="atv">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M20 8h-1.82l-1.68-4.64C16.19 2.53 15.44 2 14.6 2H9.4c-.84 0-1.59.53-1.9 1.36L5.82 8H4c-1.1 0-2 .9-2 2v2c0 .55.45 1 1 1h1v6c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-5h4v5c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-6h1c.55 0 1-.45 1-1v-2c0-1.1-.9-2-2-2zm-12 0l1.1-3h5.8L15 8H8zm-1 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" fill="currentColor"></path>
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">ATV</span>
-								</div>
-								<div class="fleetos-vehicle-type-item" data-type="scooter">
+								</button>
+								<button type="button" class="fleetos-vehicle-type-item" data-type="scooter">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z" fill="currentColor"></path>
@@ -1372,7 +1396,7 @@
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">SCOOTER</span>
-								</div>
+								</button>
 							</div>
 							
 							<input type="hidden" name="vehicle_type" id="vehicle_type" value="car">

@@ -1041,6 +1041,197 @@
 						24/7 Υποστήριξη
 					</div>
 				</div>
+				
+				<!-- FleetOS Booking Form -->
+				<div class="fleetos-booking-form-wrapper">
+					<div class="fleetos-booking-form-container">
+						<!-- Progress Indicator -->
+						<div class="fleetos-progress-indicator">
+							<div class="fleetos-progress-step active">
+								<span class="fleetos-progress-number">1</span>
+								<span class="fleetos-progress-text">Check Availability</span>
+							</div>
+							<div class="fleetos-progress-line"></div>
+							<div class="fleetos-progress-step">
+								<span class="fleetos-progress-number">2</span>
+								<span class="fleetos-progress-text">Book Vehicle</span>
+							</div>
+						</div>
+						
+						<form class="fleetos-booking-form" method="post">
+							<!-- Vehicle Type Selector -->
+							<div class="fleetos-vehicle-type-selector">
+								<div class="fleetos-vehicle-type-item active" data-type="car">
+									<div class="fleetos-vehicle-icon">
+										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1h-11c-.66 0-1.22.42-1.42 1.01L3 8v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V8l-2.08-5.99zM6.5 12c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm11 0c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12zM5 7l1.5-4.5h11L19 7H5z" fill="currentColor"></path>
+										</svg>
+									</div>
+									<span class="fleetos-vehicle-label">CAR</span>
+								</div>
+								<div class="fleetos-vehicle-type-item" data-type="atv">
+									<div class="fleetos-vehicle-icon">
+										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M20 8h-1.82l-1.68-4.64C16.19 2.53 15.44 2 14.6 2H9.4c-.84 0-1.59.53-1.9 1.36L5.82 8H4c-1.1 0-2 .9-2 2v2c0 .55.45 1 1 1h1v6c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-5h4v5c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-6h1c.55 0 1-.45 1-1v-2c0-1.1-.9-2-2-2zm-12 0l1.1-3h5.8L15 8H8zm-1 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" fill="currentColor"></path>
+										</svg>
+									</div>
+									<span class="fleetos-vehicle-label">ATV</span>
+								</div>
+								<div class="fleetos-vehicle-type-item" data-type="scooter">
+									<div class="fleetos-vehicle-icon">
+										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z" fill="currentColor"></path>
+											<path d="M9 6H6V4h3v2zm10 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" fill="currentColor"></path>
+										</svg>
+									</div>
+									<span class="fleetos-vehicle-label">SCOOTER</span>
+								</div>
+							</div>
+							
+							<input type="hidden" name="vehicle_type" id="vehicle_type" value="car">
+							
+							<!-- Compact Form Fields -->
+							<div class="fleetos-form-compact">
+								<div class="fleetos-form-group-compact">
+									<label for="pickup_location_id" class="fleetos-label-compact">
+										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z" fill="currentColor"></path>
+										</svg>
+										Pickup Location
+									</label>
+									<select name="pickup_location_id" id="pickup_location_id" class="fleetos-input-compact" required>
+										<option value="">Select Location</option>
+										<option value="08855dee-c0d7-45c3-95c2-6a2076bb24cf">Λιμάνι Πειραια</option>
+										<option value="29a72975-019b-4cd3-a100-a4ccb2a68e99">Αεροδρόμιο Αθηνών</option>
+										<option value="41bd87d7-c049-426c-935e-e673165a900c">Πλατεία Συντάγματος</option>
+										<option value="dc426294-1e42-4a00-a869-6130e944591b">Κεντρικό Γραφείο</option>
+									</select>
+								</div>
+								
+								<div class="fleetos-form-row-compact">
+									<div class="fleetos-form-group-compact">
+										<label for="pickup_date" class="fleetos-label-compact">
+											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z" fill="currentColor"></path>
+											</svg>
+											Pickup
+										</label>
+										<input type="date" name="pickup_date" id="pickup_date" class="fleetos-input-compact" required>
+									</div>
+									<div class="fleetos-form-group-compact">
+										<label for="pickup_time" class="fleetos-label-compact">
+											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
+											</svg>
+											Time
+										</label>
+										<select name="pickup_time" id="pickup_time" class="fleetos-input-compact" required>
+											<option value="">Select Time</option>
+											<option value="07:00">07:00</option>
+											<option value="07:30">07:30</option>
+											<option value="08:00">08:00</option>
+											<option value="08:30">08:30</option>
+											<option value="09:00">09:00</option>
+											<option value="09:30">09:30</option>
+											<option value="10:00">10:00</option>
+											<option value="10:30">10:30</option>
+											<option value="11:00">11:00</option>
+											<option value="11:30">11:30</option>
+											<option value="12:00">12:00</option>
+											<option value="12:30">12:30</option>
+											<option value="13:00">13:00</option>
+											<option value="13:30">13:30</option>
+											<option value="14:00">14:00</option>
+											<option value="14:30">14:30</option>
+											<option value="15:00">15:00</option>
+											<option value="15:30">15:30</option>
+											<option value="16:00">16:00</option>
+											<option value="16:30">16:30</option>
+											<option value="17:00">17:00</option>
+											<option value="17:30">17:30</option>
+											<option value="18:00">18:00</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="fleetos-form-row-compact">
+									<div class="fleetos-form-group-compact">
+										<label for="return_date" class="fleetos-label-compact">
+											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z" fill="currentColor"></path>
+											</svg>
+											Return
+										</label>
+										<input type="date" name="return_date" id="return_date" class="fleetos-input-compact" required>
+									</div>
+									<div class="fleetos-form-group-compact">
+										<label for="return_time" class="fleetos-label-compact">
+											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
+											</svg>
+											Time
+										</label>
+										<select name="return_time" id="return_time" class="fleetos-input-compact" required>
+											<option value="">Select Time</option>
+											<option value="07:00">07:00</option>
+											<option value="07:30">07:30</option>
+											<option value="08:00">08:00</option>
+											<option value="08:30">08:30</option>
+											<option value="09:00">09:00</option>
+											<option value="09:30">09:30</option>
+											<option value="10:00">10:00</option>
+											<option value="10:30">10:30</option>
+											<option value="11:00">11:00</option>
+											<option value="11:30">11:30</option>
+											<option value="12:00">12:00</option>
+											<option value="12:30">12:30</option>
+											<option value="13:00">13:00</option>
+											<option value="13:30">13:30</option>
+											<option value="14:00">14:00</option>
+											<option value="14:30">14:30</option>
+											<option value="15:00">15:00</option>
+											<option value="15:30">15:30</option>
+											<option value="16:00">16:00</option>
+											<option value="16:30">16:30</option>
+											<option value="17:00">17:00</option>
+											<option value="17:30">17:30</option>
+											<option value="18:00">18:00</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="fleetos-submit-button-modern">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+									</svg>
+									Search Available Cars
+								</div>
+							</div>
+							
+							<!-- Trust Elements -->
+							<div class="fleetos-trust-elements">
+								<div class="fleetos-trust-item">
+									<svg viewBox="0 0 24 24" fill="currentColor">
+										<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+									</svg>
+									No Credit Card Required
+								</div>
+								<div class="fleetos-trust-item">
+									<svg viewBox="0 0 24 24" fill="currentColor">
+										<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+									</svg>
+									Free Delivery & Pickup
+								</div>
+								<div class="fleetos-trust-item">
+									<svg viewBox="0 0 24 24" fill="currentColor">
+										<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+									</svg>
+									24/7 Support
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 			
 		<!-- Booking CTA -->
@@ -1502,6 +1693,7 @@
 			<div class="footer-bottom">
 				<p>&copy; 2024 Aggelos Rentals. Όλα τα δικαιώματα διατηρούνται.</p>
 				<p>
+					<a href="/sitemap/">Χάρτης Ιστοσελίδας</a> | 
 					<a href="/privacy-policy-2/">Πολιτική Απορρήτου</a> | 
 					<a href="/terms-and-conditions/">Όροι & Προϋποθέσεις</a>
 				</p>
@@ -1541,36 +1733,137 @@
 			}
 		})();
 		
-		// Set minimum date for booking form
-		(function() {
-			const today = new Date().toISOString().split('T')[0];
-			const pickupDateInput = document.querySelector('input[name="pickup_date"]');
-			const returnDateInput = document.querySelector('input[name="return_date"]');
+	<script>
+		// FleetOS Configuration
+		var fleetosBooking = {
+			organizationSlug: 'aggelos-rentals',
+			redirectUrl: 'https://fleetos.io'
+		};
+		
+		// FleetOS Booking Form JavaScript
+		(function($) {
+			'use strict';
 			
-			if (pickupDateInput) {
-				pickupDateInput.setAttribute('min', today);
-				pickupDateInput.value = today;
-			}
-			
-			if (returnDateInput) {
-				returnDateInput.setAttribute('min', today);
-				const tomorrow = new Date();
-				tomorrow.setDate(tomorrow.getDate() + 1);
-				returnDateInput.value = tomorrow.toISOString().split('T')[0];
-			}
-			
-			// Update return date minimum when pickup date changes
-			if (pickupDateInput && returnDateInput) {
-				pickupDateInput.addEventListener('change', function() {
-					const pickupDate = new Date(this.value);
-					pickupDate.setDate(pickupDate.getDate() + 1);
-					returnDateInput.setAttribute('min', pickupDate.toISOString().split('T')[0]);
-					if (new Date(returnDateInput.value) <= new Date(this.value)) {
-						returnDateInput.value = pickupDate.toISOString().split('T')[0];
+			$(document).ready(function() {
+				// Initialize default dates
+				function setDefaultDates() {
+					const now = new Date();
+					const pickupDate = now.toISOString().split('T')[0];
+					const pickupTime = now.toTimeString().slice(0, 5);
+					
+					const dropoffDate = new Date(now);
+					dropoffDate.setDate(dropoffDate.getDate() + 3);
+					const dropoffDateStr = dropoffDate.toISOString().split('T')[0];
+					
+					const pickupDateInput = $('#pickup_date');
+					const pickupTimeInput = $('#pickup_time');
+					const dropoffDateInput = $('#return_date');
+					const dropoffTimeInput = $('#return_time');
+					
+					if (!pickupDateInput.val()) {
+						pickupDateInput.val(pickupDate);
 					}
+					if (!pickupTimeInput.val()) {
+						pickupTimeInput.val(pickupTime);
+					}
+					if (!dropoffDateInput.val()) {
+						dropoffDateInput.val(dropoffDateStr);
+					}
+					if (!dropoffTimeInput.val()) {
+						dropoffTimeInput.val(pickupTime);
+					}
+					
+					// Set minimum dropoff date
+					updateDropoffDateMin();
+				}
+				
+				// Set default dates on load
+				setDefaultDates();
+				
+				// Vehicle type selection
+				$('.fleetos-vehicle-type-item').on('click', function() {
+					$('.fleetos-vehicle-type-item').removeClass('active');
+					$(this).addClass('active');
+					
+					const vehicleType = $(this).data('type');
+					$('#vehicle_type').val(vehicleType);
 				});
-			}
-		})();
+				
+				// Update minimum dropoff date when pickup date changes
+				function updateDropoffDateMin() {
+					const pickupDate = $('#pickup_date').val();
+					if (pickupDate) {
+						const pickupDateObj = new Date(pickupDate);
+						const minDropoffDate = new Date(pickupDateObj);
+						minDropoffDate.setDate(minDropoffDate.getDate() + 1);
+						$('#return_date').attr('min', minDropoffDate.toISOString().split('T')[0]);
+						
+						// Auto-update dropoff date if it's before the new minimum
+						const dropoffDate = $('#return_date').val();
+						if (dropoffDate) {
+							const dropoffDateObj = new Date(dropoffDate);
+							if (dropoffDateObj <= pickupDateObj) {
+								const newDropoffDate = new Date(pickupDateObj);
+								newDropoffDate.setDate(newDropoffDate.getDate() + 3);
+								$('#return_date').val(newDropoffDate.toISOString().split('T')[0]);
+							}
+						}
+					}
+				}
+				
+				$('#pickup_date').on('change', function() {
+					updateDropoffDateMin();
+				});
+				
+				// Form validation and submission
+				$('.fleetos-booking-form').on('submit', function(e) {
+					e.preventDefault();
+					
+					const form = $(this);
+					const vehicleType = $('#vehicle_type').val();
+					const pickupLocationId = $('#pickup_location_id').val();
+					
+					const formData = {
+						vehicle_type: vehicleType,
+						pickup_date: form.find('[name="pickup_date"]').val(),
+						pickup_time: form.find('[name="pickup_time"]').val() || new Date().toTimeString().slice(0, 5),
+						pickup_location_id: pickupLocationId,
+						dropoff_date: form.find('[name="return_date"]').val(),
+						dropoff_time: form.find('[name="return_time"]').val() || form.find('[name="pickup_time"]').val() || new Date().toTimeString().slice(0, 5),
+						dropoff_location_id: pickupLocationId, // Same as pickup for now
+					};
+					
+					// Validate required fields
+					if (!formData.pickup_date || !formData.dropoff_date || !formData.pickup_location_id) {
+						alert('Please fill in all required fields.');
+						return;
+					}
+					
+					// Validate dates
+					const pickupDate = new Date(formData.pickup_date + 'T' + formData.pickup_time);
+					const dropoffDate = new Date(formData.dropoff_date + 'T' + formData.dropoff_time);
+					
+					if (pickupDate >= dropoffDate) {
+						alert('Return date and time must be after pickup date and time.');
+						return;
+					}
+					
+					// Build redirect URL
+					const orgSlug = fleetosBooking.organizationSlug;
+					const baseUrl = fleetosBooking.redirectUrl;
+					const params = new URLSearchParams(formData);
+					
+					// Remove empty values
+					for (const [key, value] of params.entries()) {
+						if (!value) {
+							params.delete(key);
+						}
+					}
+					
+					window.location.href = baseUrl + '/' + orgSlug + '/search?' + params.toString();
+				});
+			});
+		})(jQuery);
 	</script>
 
 	<!-- Floating WhatsApp Button -->

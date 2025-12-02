@@ -169,6 +169,7 @@
     opacity: 0;
     transition: opacity 0.2s;
     border-radius: 8px;
+    pointer-events: none;
 }
 
 .fleetos-vehicle-type-item:hover {
@@ -238,6 +239,8 @@
 .fleetos-vehicle-icon svg {
     width: 100%;
     height: 100%;
+    color: #374151;
+    fill: currentColor;
 }
 
 .fleetos-vehicle-type-item.active .fleetos-vehicle-icon svg {
@@ -249,7 +252,7 @@
     font-weight: 600;
     letter-spacing: 0.3px;
     text-transform: uppercase;
-    color: #4b5563;
+    color: #1f2937;
     transition: color 0.2s;
     white-space: nowrap;
 }

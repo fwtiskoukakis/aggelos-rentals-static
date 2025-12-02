@@ -657,29 +657,18 @@
 			align-items: center;
 			gap: 10px;
 			padding: 20px 25px;
-			background: #ffffff;
+			background: #f9fafb;
 			border: 2px solid #e5e7eb;
 			border-radius: 12px;
 			cursor: pointer;
 			transition: all 0.3s ease;
 			min-width: 120px;
-			font-family: inherit;
-			font-size: inherit;
-			line-height: inherit;
-			color: #374151;
-			flex-shrink: 0;
 		}
 		
 		.fleetos-vehicle-type-item:hover {
-			background: #f8fafc;
-			border-color: #2563eb;
+			background: #f3f4f6;
+			border-color: #d1d5db;
 			transform: translateY(-2px);
-			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-		}
-		
-		.fleetos-vehicle-type-item:focus {
-			outline: 2px solid #2563eb;
-			outline-offset: 2px;
 		}
 		
 		.fleetos-vehicle-type-item.active {
@@ -687,20 +676,6 @@
 			border-color: #2563eb;
 			color: #ffffff;
 			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-		}
-		
-		.fleetos-vehicle-type-item.active:hover {
-			background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-			transform: translateY(-2px);
-			box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-		}
-		
-		.fleetos-vehicle-type-item.active .fleetos-vehicle-icon svg {
-			fill: #ffffff;
-		}
-		
-		.fleetos-vehicle-type-item:not(.active) .fleetos-vehicle-icon svg {
-			fill: #6b7280;
 		}
 		
 		.fleetos-vehicle-icon {
@@ -730,13 +705,13 @@
 		.fleetos-form-compact {
 			display: flex;
 			flex-direction: column;
-			gap: 24px;
+			gap: 20px;
 		}
 		
 		.fleetos-form-group-compact {
 			display: flex;
 			flex-direction: column;
-			gap: 6px;
+			gap: 8px;
 		}
 		
 		.fleetos-label-compact {
@@ -746,18 +721,17 @@
 			font-weight: 600;
 			font-size: 0.875rem;
 			color: #374151;
-			margin-bottom: 0;
+			margin-bottom: 4px;
 		}
 		
 		.fleetos-label-compact svg {
 			width: 18px;
 			height: 18px;
 			color: #2563eb;
-			flex-shrink: 0;
 		}
 		
 		.fleetos-input-compact {
-			padding: 14px 16px;
+			padding: 12px 16px;
 			border: 2px solid #e5e7eb;
 			border-radius: 8px;
 			font-size: 0.95rem;
@@ -765,7 +739,6 @@
 			background: #ffffff;
 			color: #1f2937;
 			width: 100%;
-			box-sizing: border-box;
 		}
 		
 		.fleetos-input-compact:focus {
@@ -777,7 +750,7 @@
 		.fleetos-form-row-compact {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 16px;
+			gap: 15px;
 		}
 		
 		.fleetos-date-time-group {
@@ -842,50 +815,10 @@
 			font-weight: 500;
 		}
 		
-		.fleetos-alternative-booking {
-			margin-top: 20px;
-			padding-top: 20px;
-			border-top: 1px solid #e5e7eb;
-		}
-		
-		.fleetos-booking-method {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 8px;
-			padding: 12px 16px;
-			background: #ffffff;
-			border: 2px solid #e5e7eb;
-			border-radius: 8px;
-			color: #374151;
-			text-decoration: none;
-			font-weight: 600;
-			font-size: 0.9rem;
-			transition: all 0.3s ease;
-			text-align: center;
-		}
-		
-		.fleetos-booking-method:hover {
-			background: #f8fafc;
-			border-color: #2563eb;
-			transform: translateY(-1px);
-			box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-		}
-		
-		.fleetos-booking-method.whatsapp {
-			background: #25d366;
-			color: #ffffff;
-			border-color: #25d366;
-		}
-		
-		.fleetos-booking-method.whatsapp:hover {
-			background: #20ba5a;
-			border-color: #20ba5a;
-			color: #ffffff;
-		}
-		
-		.fleetos-booking-method svg {
-			flex-shrink: 0;
+		.fleetos-trust-item svg {
+			width: 20px;
+			height: 20px;
+			color: #10b981;
 		}
 		
 		/* ===== BOOKING CTA ===== */
@@ -1245,24 +1178,6 @@
 		.booking-cta__contact .btn {
 			width: 100%;
 		}
-		
-		/* Keep FleetOS vehicle selector in one line on mobile */
-		.fleetos-vehicle-type-selector {
-			flex-wrap: nowrap;
-			overflow-x: auto;
-			scrollbar-width: none;
-			-ms-overflow-style: none;
-			padding-bottom: 10px;
-		}
-		
-		.fleetos-vehicle-type-selector::-webkit-scrollbar {
-			display: none;
-		}
-		
-		.fleetos-vehicle-type-item {
-			min-width: 100px;
-			flex-shrink: 0;
-		}
 		}
 		
 		@media (max-width: 768px) {
@@ -1289,16 +1204,6 @@
 			
 			.monthly-cta__price {
 				font-size: 2.5rem;
-			}
-			
-			/* FleetOS form mobile adjustments */
-			.fleetos-booking-form-wrapper {
-				padding: 20px;
-			}
-			
-			.fleetos-form-row-compact {
-				grid-template-columns: 1fr;
-				gap: 16px;
 			}
 		}
 	</style>
@@ -1443,23 +1348,23 @@
 						<form class="fleetos-booking-form" method="post">
 							<!-- Vehicle Type Selector -->
 							<div class="fleetos-vehicle-type-selector">
-								<button type="button" class="fleetos-vehicle-type-item active" data-type="car">
+								<div class="fleetos-vehicle-type-item active" data-type="car">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1h-11c-.66 0-1.22.42-1.42 1.01L3 8v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V8l-2.08-5.99zM6.5 12c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm11 0c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12zM5 7l1.5-4.5h11L19 7H5z" fill="currentColor"></path>
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">CAR</span>
-								</button>
-								<button type="button" class="fleetos-vehicle-type-item" data-type="atv">
+								</div>
+								<div class="fleetos-vehicle-type-item" data-type="atv">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M20 8h-1.82l-1.68-4.64C16.19 2.53 15.44 2 14.6 2H9.4c-.84 0-1.59.53-1.9 1.36L5.82 8H4c-1.1 0-2 .9-2 2v2c0 .55.45 1 1 1h1v6c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-5h4v5c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-6h1c.55 0 1-.45 1-1v-2c0-1.1-.9-2-2-2zm-12 0l1.1-3h5.8L15 8H8zm-1 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" fill="currentColor"></path>
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">ATV</span>
-								</button>
-								<button type="button" class="fleetos-vehicle-type-item" data-type="scooter">
+								</div>
+								<div class="fleetos-vehicle-type-item" data-type="scooter">
 									<div class="fleetos-vehicle-icon">
 										<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z" fill="currentColor"></path>
@@ -1467,7 +1372,7 @@
 										</svg>
 									</div>
 									<span class="fleetos-vehicle-label">SCOOTER</span>
-								</button>
+								</div>
 							</div>
 							
 							<input type="hidden" name="vehicle_type" id="vehicle_type" value="car">
@@ -1503,7 +1408,7 @@
 									<div class="fleetos-form-group-compact">
 										<label for="pickup_time" class="fleetos-label-compact">
 											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
+												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
 											</svg>
 											Time
 										</label>
@@ -1549,7 +1454,7 @@
 									<div class="fleetos-form-group-compact">
 										<label for="return_time" class="fleetos-label-compact">
 											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
+												<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="currentColor"></path>
 											</svg>
 											Time
 										</label>
@@ -1592,25 +1497,6 @@
 								</div>
 							</div>
 							
-							<!-- Alternative Booking Methods -->
-							<div class="fleetos-alternative-booking">
-								<div style="text-align: center; margin: 20px 0 15px; color: #6b7280; font-size: 0.9rem; font-weight: 500;">Or book directly</div>
-								<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-									<a href="tel:+306980151068" class="fleetos-booking-method">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-											<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-										</svg>
-										Call Now
-									</a>
-									<a href="https://wa.me/306980151068" class="fleetos-booking-method whatsapp">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-											<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-										</svg>
-										WhatsApp
-									</a>
-								</div>
-							</div>
-							
 							<!-- Trust Elements -->
 							<div class="fleetos-trust-elements">
 								<div class="fleetos-trust-item">
@@ -1627,7 +1513,7 @@
 								</div>
 								<div class="fleetos-trust-item">
 									<svg viewBox="0 0 24 24" fill="currentColor">
-										<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
+										<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
 									</svg>
 									24/7 Support
 								</div>
@@ -1637,100 +1523,39 @@
 				</div>
 			</div>
 			
-		<!-- Benefits Section -->
-		<section class="benefits">
-			<div class="container">
-				<h2 class="section-title">Γιατί να Επιλέξετε Εμάς</h2>
+		<!-- Booking CTA -->
+		<div class="booking-cta">
+			<div class="booking-cta__content">
+				<h2 class="booking-cta__title">Βρείτε το Ιδανικό Αυτοκίνητο για Εσάς</h2>
+				<p class="booking-cta__subtitle">Δείτε τον στόλο μας και κάντε κράτηση σε λιγότερο από 5 λεπτά</p>
 				
-				<div class="benefits__grid">
-					<div class="benefit-card">
-						<div class="benefit-card__icon">
-							<svg viewBox="0 0 24 24" fill="currentColor">
-								<path d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/>
-							</svg>
-						</div>
-						<h3 class="benefit-card__title">Χωρίς Πιστωτική Κάρτα</h3>
-						<p class="benefit-card__desc">Δεκτά μετρητά και κάρτες. Ευέλικτες επιλογές πληρωμής για την άνεσή σας.</p>
-					</div>
-					
-					<div class="benefit-card">
-						<div class="benefit-card__icon">
-							<svg viewBox="0 0 24 24" fill="currentColor">
-								<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
-							</svg>
-						</div>
-						<h3 class="benefit-card__title">Παράδοση σε 30 Λεπτά</h3>
-						<p class="benefit-card__desc">Γρήγορη παράδοση στο λιμάνι Πειραιά ή το αεροδρόμιο Αθηνών.</p>
-					</div>
-					
-					<div class="benefit-card">
-						<div class="benefit-card__icon">
-							<svg viewBox="0 0 24 24" fill="currentColor">
-								<path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"/>
-							</svg>
-						</div>
-						<h3 class="benefit-card__title">Μηνιαία Ενοικίαση από €300</h3>
-						<p class="benefit-card__desc">Οικονομικές μηνιαίες τιμές με πλήρη ασφάλεια και υποστήριξη.</p>
-					</div>
-					
-					<div class="benefit-card">
-						<div class="benefit-card__icon">
-							<svg viewBox="0 0 24 24" fill="currentColor">
-								<path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
-							</svg>
-						</div>
-						<h3 class="benefit-card__title">Ελληνική Εξυπηρέτηση 24/7</h3>
-						<p class="benefit-card__desc">Πάντα εδώ για να σας βοηθήσουμε, στα ελληνικά, όποτε μας χρειαστείτε.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Monthly Rental CTA -->
-		<section class="monthly-cta">
-			<div class="monthly-cta__container">
-				<h2 class="monthly-cta__title">Μηνιαία Ενοικίαση Αυτοκινήτου</h2>
-				<p class="monthly-cta__subtitle">Η καλύτερη επιλογή για μακροχρόνιες ανάγκες</p>
-				
-				<div class="monthly-cta__price">από €350/μήνα</div>
-				
-				<div class="monthly-cta__features">
-					<div class="monthly-cta__feature">
-						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-						</svg>
-						Χωρίς Κρυφές Χρεώσεις
-					</div>
-					<div class="monthly-cta__feature">
-						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-						</svg>
-						Πλήρης Ασφάλεια
-					</div>
-					<div class="monthly-cta__feature">
-						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-						</svg>
-						2000 km/μήνα
-					</div>
-					<div class="monthly-cta__feature">
-						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
-						</svg>
-						Δωρεάν Παράδοση
-					</div>
-				</div>
-				
-				<div class="monthly-cta__buttons">
-					<a href="/athens-monthly-car-rentals/" class="btn btn-primary">
-						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+				<div class="booking-cta__buttons">
+					<a href="/product-category/rental/car/" class="btn btn-primary btn-large">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
 							<path d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z"/>
 						</svg>
-						Δείτε Διαθέσιμα Αυτοκίνητα
+						Δείτε Διαθέσιμα Οχήματα & Κάντε Κράτηση
 					</a>
-					<a href="tel:+306980151068" class="btn btn-secondary">
-						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-							<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+					
+					<div class="booking-cta__or">
+						<span>ή επικοινωνήστε μαζί μας</span>
+					</div>
+					
+					<div class="booking-cta__contact">
+						<a href="tel:+306980151068" class="btn btn-secondary">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+							</svg>
+							+30 698 015 1068
+						</a>
+						<a href="https://wa.me/306980151068" class="btn btn-secondary btn-whatsapp">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+							</svg>
+							WhatsApp
+						</a>
+					</div>
+				</div>
 				
 				<div class="booking-cta__features">
 					<div class="booking-cta__feature">
@@ -1871,7 +1696,7 @@
 			
 		<div class="benefits__grid">
 		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-			<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Fiat Panda Hybrid 2023 Πειραιάς - €35 ημερησίως, €450 μηνιαίως" itemprop="image" style="width: calc(100% + 60px); height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -40px -30px 20px -30px; display: block; position: relative; left: -30px;">
+			<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Fiat Panda Hybrid 2023 Πειραιάς - €35 ημερησίως, €450 μηνιαίως" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -42px -32px 20px -32px; display: block;">
 			<h3 class="benefit-card__title" itemprop="name">Fiat Panda Hybrid</h3>
 			<p class="benefit-card__desc" itemprop="description">
 				Οικονομικό & Οικολογικό<br>
@@ -1895,7 +1720,7 @@
 		</div>
 		
 		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-			<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Jeep Renegade Πειραιάς - €80 ημερησίως, €750 μηνιαίως, Αυτόματο SUV" itemprop="image" style="width: calc(100% + 60px); height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -40px -30px 20px -30px; display: block; position: relative; left: -30px;">
+			<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Jeep Renegade Πειραιάς - €80 ημερησίως, €750 μηνιαίως, Αυτόματο SUV" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -42px -32px 20px -32px; display: block;">
 			<h3 class="benefit-card__title" itemprop="name">Jeep Renegade</h3>
 			<p class="benefit-card__desc" itemprop="description">
 				SUV με Στυλ & Άνεση<br>
@@ -1919,7 +1744,7 @@
 		</div>
 		
 		<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-			<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Mercedes Benz A-Class Πειραιάς - €150 ημερησίως, €1200 μηνιαίως, Luxury Αυτόματο" itemprop="image" style="width: calc(100% + 60px); height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -40px -30px 20px -30px; display: block; position: relative; left: -30px;">
+			<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg" alt="Ενοικίαση Mercedes Benz A-Class Πειραιάς - €150 ημερησίως, €1200 μηνιαίως, Luxury Αυτόματο" itemprop="image" style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px 14px 0 0; margin: -42px -32px 20px -32px; display: block;">
 			<h3 class="benefit-card__title" itemprop="name">Mercedes Benz A-Class</h3>
 			<p class="benefit-card__desc" itemprop="description">
 				Πολυτέλεια & Κομψότητα<br>
@@ -2161,27 +1986,14 @@
 					<a href="/privacy-policy-2/">Πολιτική Απορρήτου</a> | 
 					<a href="/terms-and-conditions/">Όροι & Προϋποθέσεις</a>
 				</p>
+			</div>
 		</div>
 	</footer>
 
-	<!-- Floating WhatsApp Button -->
-	<a href="https://wa.me/306980151068" class="whatsapp-float" aria-label="Contact us on WhatsApp">
-		<svg viewBox="0 0 24 24" fill="currentColor">
-			<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-		</svg>
-	</a>
-
-	<!-- Cookie Consent Popup -->
-	<div id="cookieConsent" class="cookie-popup">
-		<div class="cookie-content">
-			<p>Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας. Συνεχίζοντας, αποδέχεστε την <a href="/privacy-policy-2/">Πολιτική Απορρήτου</a>.</p>
-			<button onclick="acceptCookies()" class="cookie-btn">Αποδοχή</button>
-		</div>
-	</div>
-
+	<!-- Scripts -->
 	<script>
-		// Navigation and Hamburger Menu
-		document.addEventListener('DOMContentLoaded', function() {
+		// Navigation
+		(function() {
 			const header = document.getElementById('siteHeader');
 			const burger = document.getElementById('siteBurger');
 			const mobileMenu = document.getElementById('siteMobileMenu');
@@ -2197,100 +2009,44 @@
 			
 			// Mobile menu toggle
 			if (burger && mobileMenu) {
-				burger.addEventListener('click', function(e) {
-					e.stopPropagation();
+				burger.addEventListener('click', function() {
 					mobileMenu.classList.toggle('is-open');
-					
-					// Toggle burger animation
-					const spans = burger.querySelectorAll('span');
-					spans.forEach((span, index) => {
-						if (mobileMenu.classList.contains('is-open')) {
-							if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-							if (index === 1) span.style.opacity = '0';
-							if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-						} else {
-							span.style.transform = '';
-							span.style.opacity = '';
-						}
-					});
 				});
 				
 				// Close on outside click
 				document.addEventListener('click', function(e) {
 					if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) {
 						mobileMenu.classList.remove('is-open');
-						
-						// Reset burger animation
-						const spans = burger.querySelectorAll('span');
-						spans.forEach(span => {
-							span.style.transform = '';
-							span.style.opacity = '';
-						});
-					}
-				});
-				
-				// Close on menu link click
-				const menuLinks = mobileMenu.querySelectorAll('a');
-				menuLinks.forEach(link => {
-					link.addEventListener('click', function() {
-						mobileMenu.classList.remove('is-open');
-						
-						// Reset burger animation
-						const spans = burger.querySelectorAll('span');
-						spans.forEach(span => {
-							span.style.transform = '';
-							span.style.opacity = '';
-						});
-					});
-				});
-			}
-		});
-		
-		// Set minimum date for booking form
-		(function() {
-			const today = new Date().toISOString().split('T')[0];
-			const pickupDateInput = document.querySelector('input[name="pickup_date"]');
-			const returnDateInput = document.querySelector('input[name="return_date"]');
-			
-			if (pickupDateInput) {
-				pickupDateInput.setAttribute('min', today);
-				pickupDateInput.value = today;
-			}
-			
-			if (returnDateInput) {
-				returnDateInput.setAttribute('min', today);
-				const tomorrow = new Date();
-				tomorrow.setDate(tomorrow.getDate() + 1);
-				returnDateInput.value = tomorrow.toISOString().split('T')[0];
-			}
-			
-			// Update return date minimum when pickup date changes
-			if (pickupDateInput && returnDateInput) {
-				pickupDateInput.addEventListener('change', function() {
-					const pickupDate = new Date(this.value);
-					pickupDate.setDate(pickupDate.getDate() + 1);
-					returnDateInput.setAttribute('min', pickupDate.toISOString().split('T')[0]);
-					if (new Date(returnDateInput.value) <= new Date(this.value)) {
-						returnDateInput.value = pickupDate.toISOString().split('T')[0];
 					}
 				});
 			}
 		})();
 		
-		// Cookie Consent
-		function acceptCookies() {
-			localStorage.setItem('cookiesAccepted', 'true');
-			document.getElementById('cookieConsent').classList.remove('show');
-		}
-		(function() {
-			if (!localStorage.getItem('cookiesAccepted')) {
-				setTimeout(function() {
-					document.getElementById('cookieConsent').classList.add('show');
-				}, 1500);
-			}
-		})();
-
+	<script>
+		// FleetOS Configuration
+		var fleetosBooking = {
+			organizationSlug: 'aggelos-rentals',
+			redirectUrl: 'https://fleetos.io'
+		};
 	</script>
+	
+	<!-- FleetOS Booking JavaScript -->
+	<script src="/fleetos-booking.js"></script>
+
+	<!-- Floating WhatsApp Button -->
+	<a href="https://wa.me/306980151068" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Επικοινωνία μέσω WhatsApp">
+		<svg viewBox="0 0 24 24" fill="currentColor">
+			<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+		</svg>
+	</a>
+
+	<!-- Cookie Consent Popup -->
+	<div id="cookieConsent" class="cookie-popup">
+		<div class="cookie-content">
+			<p>Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας. Συνεχίζοντας, αποδέχεστε την <a href="/privacy-policy-2/">Πολιτική Απορρήτου</a>.</p>
+			<button onclick="acceptCookies()" class="cookie-btn">Αποδοχή</button>
+		</div>
+	</div>
 
 	<style>
 		/* Floating WhatsApp Button */
@@ -2309,7 +2065,6 @@
 			box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
 			z-index: 9999;
 			transition: all 0.3s ease;
-			text-decoration: none;
 		}
 		.whatsapp-float:hover {
 			transform: scale(1.1);
@@ -2359,6 +2114,21 @@
 			.cookie-popup { left: 10px; right: 10px; max-width: none; bottom: 80px; }
 		}
 	</style>
+
+	<script>
+		// Cookie Consent
+		function acceptCookies() {
+			localStorage.setItem('cookiesAccepted', 'true');
+			document.getElementById('cookieConsent').classList.remove('show');
+		}
+		(function() {
+			if (!localStorage.getItem('cookiesAccepted')) {
+				setTimeout(function() {
+					document.getElementById('cookieConsent').classList.add('show');
+				}, 1500);
+			}
+		})();
+	</script>
 </body>
 </html>
 

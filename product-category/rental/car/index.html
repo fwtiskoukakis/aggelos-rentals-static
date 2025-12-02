@@ -601,8 +601,14 @@
 		
 		.benefits__grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			grid-template-columns: repeat(3, 1fr);
 			gap: 32px;
+		}
+		
+		@media (max-width: 1024px) {
+			.benefits__grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
 		}
 		
 		.benefit-card {
@@ -817,7 +823,7 @@
 		.benefit-card .btn-primary {
 			width: 100%;
 			padding: 14px 24px;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 			color: #ffffff;
 			border: none;
 			border-radius: 12px;
@@ -825,7 +831,7 @@
 			font-size: 1rem;
 			cursor: pointer;
 			transition: all 0.3s;
-			box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+			box-shadow: 0 4px 12px rgba(26, 26, 46, 0.3);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -835,8 +841,8 @@
 		
 		.benefit-card .btn-primary:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-			background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+			box-shadow: 0 8px 20px rgba(26, 26, 46, 0.4);
+			background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
 		}
 		
 		.benefit-card .btn-primary:active {

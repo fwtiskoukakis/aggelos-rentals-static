@@ -1,0 +1,15 @@
+https://www.aggelosrentals.com/* https://aggelosrentals.com/:splat 301!
+
+/piraeus-port-car-rental/ /location/piraeus-port/ 301
+/automatic-car-rental-piraeus/ /gearbox/automatic/ 301
+/piraeus-car-rental-prices/ /product-category/rental/car/ 301
+/vehicle/mercedes-a-class/ /product-category/rental/car/ 301
+/en/ / 301
+/type/economy/ /product-category/rental/car/ 301
+/type/luxury/ /product-category/rental/car/ 301
+/suv-rental-piraeus/ /location/piraeus-port/ 301
+/cruise-port-car-rental/ /location/piraeus-port/ 301
+/vehicle/jeep-renegade/ /type/suv/ 301
+/vehicle/fiat-panda/ /product-category/rental/car/ 301
+/sitemap/ /sitemap.html 200
+

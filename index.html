@@ -29,9 +29,11 @@
 	<link rel="alternate" hreflang="x-default" href="https://aggelosrentals.com/">
 
 	<!-- Preconnect for Performance -->
-	<link rel="preconnect" href="https://www.googletagmanager.com">
-	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+	<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+	<link rel="dns-prefetch" href="https://maps.googleapis.com">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png">
@@ -292,13 +294,23 @@
 	}
 	</script>
 
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDKQD655KK"></script>
+	<!-- Google Analytics - Deferred for Performance -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-KDKQD655KK');
+		// Defer Google Analytics to improve page load performance
+		window.addEventListener('load', function () {
+			setTimeout(function () {
+				var script = document.createElement('script');
+				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-KDKQD655KK';
+				script.async = true;
+				document.head.appendChild(script);
+				script.onload = function () {
+					window.dataLayer = window.dataLayer || [];
+					function gtag() { dataLayer.push(arguments); }
+					gtag('js', new Date());
+					gtag('config', 'G-KDKQD655KK');
+				};
+			}, 2000);
+		});
 	</script>
 
 	<!-- Modern Styles -->
@@ -708,7 +720,7 @@
 			content: none;
 		}
 
-		/* Additional geometric shapes for depth */
+		/* Additional geometric shapes for depth - Using composited animations only */
 		.hero__container::before {
 			content: '';
 			position: absolute;
@@ -717,10 +729,11 @@
 			width: 300px;
 			height: 300px;
 			background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-			border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-			animation: morph 15s ease-in-out infinite;
+			border-radius: 50%;
+			animation: float-shape 15s ease-in-out infinite;
 			z-index: 0;
 			filter: blur(40px);
+			will-change: transform, opacity;
 		}
 
 		.hero__container::after {
@@ -731,33 +744,35 @@
 			width: 250px;
 			height: 250px;
 			background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-			border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-			animation: morph 20s ease-in-out infinite reverse;
+			border-radius: 50%;
+			animation: float-shape 20s ease-in-out infinite reverse;
 			z-index: 0;
 			filter: blur(30px);
+			will-change: transform, opacity;
 		}
 
-		@keyframes morph {
+		/* Composited animation using only transform and opacity */
+		@keyframes float-shape {
 
 			0%,
 			100% {
-				border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-				transform: rotate(0deg);
+				transform: translate(0, 0) scale(1) rotate(0deg);
+				opacity: 0.6;
 			}
 
 			25% {
-				border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-				transform: rotate(90deg);
+				transform: translate(20px, -20px) scale(1.1) rotate(90deg);
+				opacity: 0.8;
 			}
 
 			50% {
-				border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-				transform: rotate(180deg);
+				transform: translate(-10px, 10px) scale(0.95) rotate(180deg);
+				opacity: 0.5;
 			}
 
 			75% {
-				border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-				transform: rotate(270deg);
+				transform: translate(15px, 5px) scale(1.05) rotate(270deg);
+				opacity: 0.7;
 			}
 		}
 
@@ -999,9 +1014,6 @@
 			height: 200%;
 			background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
 			pointer-events: none;
-		}
-
-		margin: 20px 0;
 		}
 
 		.fleetos-booking-form-container {
@@ -1948,7 +1960,8 @@
 		<!-- Main Navigation -->
 		<div class="site-header__main">
 			<a href="/" class="site-header__brand">
-				<img src="/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png" alt="AGGELOS RENTALS">
+				<img src="/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png" alt="AGGELOS RENTALS"
+					width="180" height="50" fetchpriority="high">
 			</a>
 
 			<nav class="site-nav">
@@ -2102,793 +2115,444 @@
 		</div>
 	</header>
 
-	<!-- Hero Section -->
-	<section class="hero">
-		<div class="hero__container">
-			<div class="hero__grid">
-				<div class="hero__left">
-					<h1 class="hero__title">Ενοικίαση Αυτοκινήτου Πειραιά</h1>
-					<p class="hero__subtitle">Μηνιαία & Ημερήσια Ενοικίαση | Παράδοση σε Λιμάνι & Αεροδρόμιο</p>
+	<main>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero__container">
+				<div class="hero__grid">
+					<div class="hero__left">
+						<h1 class="hero__title">Ενοικίαση Αυτοκινήτου Πειραιά</h1>
+						<p class="hero__subtitle">Μηνιαία & Ημερήσια Ενοικίαση | Παράδοση σε Λιμάνι & Αεροδρόμιο</p>
 
-					<div class="hero__trust">
-						<div class="hero__trust-item">
-							<svg viewBox="0 0 24 24" fill="currentColor">
-								<path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" />
-							</svg>
-							10+ Χρόνια Εμπειρίας
+						<div class="hero__trust">
+							<div class="hero__trust-item">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" />
+								</svg>
+								10+ Χρόνια Εμπειρίας
+							</div>
+							<div class="hero__trust-item">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M16 11C17.66 11 18.99 9.66 18.99 8S17.66 5 16 5 13.01 6.34 13.01 8 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8S9.66 5 8 5 5.01 6.34 5.01 8 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" />
+								</svg>
+								500+ Ικανοποιημένοι Πελάτες
+							</div>
+							<div class="hero__trust-item">
+								<svg viewBox="0 0 24 24" fill="currentColor">
+									<path
+										d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+								</svg>
+								24/7 Υποστήριξη
+							</div>
 						</div>
-						<div class="hero__trust-item">
+
+						<div class="hero__actions">
+							<a class="hero__button hero__button--call" href="tel:+306980151068">
+								Κάλεσέ μας
+							</a>
+							<a class="hero__button hero__button--book" href="/product-category/rental/car/">
+								Κράτηση Τώρα
+							</a>
+							<a class="hero__button hero__button--primary" href="/contact/">Book a Call</a>
+							<a class="hero__button hero__button--whatsapp" href="https://wa.me/306980151068"
+								target="_blank" rel="noopener">WhatsApp</a>
+						</div>
+					</div>
+
+					<div class="hero__right">
+						<!-- FleetOS Booking Form -->
+						<div class="fleetos-booking-form-wrapper">
+							<div class="fleetos-booking-form-container">
+								<!-- Progress Indicator -->
+								<div class="fleetos-progress-indicator">
+									<div class="fleetos-progress-step active">
+										<span class="fleetos-progress-number">1</span>
+										<span class="fleetos-progress-text">Check Availability</span>
+									</div>
+									<div class="fleetos-progress-line"></div>
+									<div class="fleetos-progress-step">
+										<span class="fleetos-progress-number">2</span>
+										<span class="fleetos-progress-text">Book Vehicle</span>
+									</div>
+								</div>
+
+								<form class="fleetos-booking-form" method="post">
+									<!-- Vehicle Type Selector -->
+									<div class="fleetos-vehicle-type-selector">
+										<div class="fleetos-vehicle-type-item active" data-type="car">
+											<div class="fleetos-vehicle-icon">
+												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1h-11c-.66 0-1.22.42-1.42 1.01L3 8v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V8l-2.08-5.99zM6.5 12c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm11 0c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12zM5 7l1.5-4.5h11L19 7H5z"
+														fill="currentColor"></path>
+												</svg>
+											</div>
+											<span class="fleetos-vehicle-label">CAR</span>
+										</div>
+										<div class="fleetos-vehicle-type-item" data-type="atv">
+											<div class="fleetos-vehicle-icon">
+												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M20 8h-1.82l-1.68-4.64C16.19 2.53 15.44 2 14.6 2H9.4c-.84 0-1.59.53-1.9 1.36L5.82 8H4c-1.1 0-2 .9-2 2v2c0 .55.45 1 1 1h1v6c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-5h4v5c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-6h1c.55 0 1-.45 1-1v-2c0-1.1-.9-2-2-2zm-12 0l1.1-3h5.8L15 8H8zm-1 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"
+														fill="currentColor"></path>
+												</svg>
+											</div>
+											<span class="fleetos-vehicle-label">ATV</span>
+										</div>
+										<div class="fleetos-vehicle-type-item" data-type="scooter">
+											<div class="fleetos-vehicle-icon">
+												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z"
+														fill="currentColor"></path>
+													<path
+														d="M9 6H6V4h3v2zm10 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
+														fill="currentColor"></path>
+												</svg>
+											</div>
+											<span class="fleetos-vehicle-label">SCOOTER</span>
+										</div>
+									</div>
+
+									<input type="hidden" name="vehicle_type" id="vehicle_type" value="car">
+
+									<!-- Compact Form Fields -->
+									<div class="fleetos-form-compact">
+										<div class="fleetos-form-group-compact">
+											<label for="pickup_location_id" class="fleetos-label-compact">
+												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"
+														fill="currentColor"></path>
+												</svg>
+												Pickup Location
+											</label>
+											<select name="pickup_location_id" id="pickup_location_id"
+												class="fleetos-input-compact" required>
+												<option value="">Select Location</option>
+												<option value="08855dee-c0d7-45c3-95c2-6a2076bb24cf">Λιμάνι Πειραια
+												</option>
+												<option value="29a72975-019b-4cd3-a100-a4ccb2a68e99">Αεροδρόμιο Αθηνών
+												</option>
+												<option value="41bd87d7-c049-426c-935e-e673165a900c">Πλατεία Συντάγματος
+												</option>
+												<option value="dc426294-1e42-4a00-a869-6130e944591b">Κεντρικό Γραφείο
+												</option>
+											</select>
+										</div>
+
+										<div class="fleetos-form-row-compact">
+											<div class="fleetos-form-group-compact">
+												<label for="pickup_date" class="fleetos-label-compact">
+													<svg viewbox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z"
+															fill="currentColor"></path>
+													</svg>
+													Pickup
+												</label>
+												<input type="date" name="pickup_date" id="pickup_date"
+													class="fleetos-input-compact" required>
+											</div>
+											<div class="fleetos-form-group-compact">
+												<label for="pickup_time" class="fleetos-label-compact">
+													<svg viewbox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
+															fill="currentColor"></path>
+													</svg>
+													Time
+												</label>
+												<select name="pickup_time" id="pickup_time"
+													class="fleetos-input-compact" required>
+													<option value="">Select Time</option>
+													<option value="07:00">07:00</option>
+													<option value="07:30">07:30</option>
+													<option value="08:00">08:00</option>
+													<option value="08:30">08:30</option>
+													<option value="09:00">09:00</option>
+													<option value="09:30">09:30</option>
+													<option value="10:00">10:00</option>
+													<option value="10:30">10:30</option>
+													<option value="11:00">11:00</option>
+													<option value="11:30">11:30</option>
+													<option value="12:00">12:00</option>
+													<option value="12:30">12:30</option>
+													<option value="13:00">13:00</option>
+													<option value="13:30">13:30</option>
+													<option value="14:00">14:00</option>
+													<option value="14:30">14:30</option>
+													<option value="15:00">15:00</option>
+													<option value="15:30">15:30</option>
+													<option value="16:00">16:00</option>
+													<option value="16:30">16:30</option>
+													<option value="17:00">17:00</option>
+													<option value="17:30">17:30</option>
+													<option value="18:00">18:00</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="fleetos-form-row-compact">
+											<div class="fleetos-form-group-compact">
+												<label for="return_date" class="fleetos-label-compact">
+													<svg viewbox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z"
+															fill="currentColor"></path>
+													</svg>
+													Return
+												</label>
+												<input type="date" name="return_date" id="return_date"
+													class="fleetos-input-compact" required>
+											</div>
+											<div class="fleetos-form-group-compact">
+												<label for="return_time" class="fleetos-label-compact">
+													<svg viewbox="0 0 24 24" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
+															fill="currentColor"></path>
+													</svg>
+													Time
+												</label>
+												<select name="return_time" id="return_time"
+													class="fleetos-input-compact" required>
+													<option value="">Select Time</option>
+													<option value="07:00">07:00</option>
+													<option value="07:30">07:30</option>
+													<option value="08:00">08:00</option>
+													<option value="08:30">08:30</option>
+													<option value="09:00">09:00</option>
+													<option value="09:30">09:30</option>
+													<option value="10:00">10:00</option>
+													<option value="10:30">10:30</option>
+													<option value="11:00">11:00</option>
+													<option value="11:30">11:30</option>
+													<option value="12:00">12:00</option>
+													<option value="12:30">12:30</option>
+													<option value="13:00">13:00</option>
+													<option value="13:30">13:30</option>
+													<option value="14:00">14:00</option>
+													<option value="14:30">14:30</option>
+													<option value="15:00">15:00</option>
+													<option value="15:30">15:30</option>
+													<option value="16:00">16:00</option>
+													<option value="16:30">16:30</option>
+													<option value="17:00">17:00</option>
+													<option value="17:30">17:30</option>
+													<option value="18:00">18:00</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="fleetos-submit-button-modern">
+											<button type="submit"
+												style="background: none; border: none; color: inherit; cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+												<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+													<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+												</svg>
+												Search Available Cars
+											</button>
+										</div>
+									</div>
+
+									<!-- Trust Elements -->
+									<div class="fleetos-trust-elements">
+										<div class="fleetos-trust-item">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+											</svg>
+											No Credit Card Required
+										</div>
+										<div class="fleetos-trust-item">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path
+													d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+											</svg>
+											Free Delivery & Pickup
+										</div>
+										<div class="fleetos-trust-item">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path
+													d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+											</svg>
+											24/7 Support
+										</div>
+									</div>
+								</form>
+
+								<!-- Booking CTA Merged -->
+								<div class="booking-cta-merged">
+									<h2 class="booking-cta-merged__title">Βρείτε το Ιδανικό Αυτοκίνητο για Εσάς</h2>
+									<p class="booking-cta-merged__subtitle">Δείτε τον στόλο μας και κάντε κράτηση σε
+										λιγότερο από 5 λεπτά</p>
+
+									<div class="booking-cta-merged__buttons">
+										<a href="/product-category/rental/car/" class="btn btn-primary btn-large">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+												<path
+													d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
+											</svg>
+											Δείτε Διαθέσιμα Οχήματα & Κάντε Κράτηση
+										</a>
+
+										<div class="booking-cta-merged__or">
+											<span>ή επικοινωνήστε μαζί μας</span>
+										</div>
+
+										<div class="booking-cta-merged__contact">
+											<a href="tel:+306980151068" class="btn btn-secondary">
+												<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+													stroke="currentColor" stroke-width="2">
+													<path
+														d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+													</path>
+												</svg>
+												+30 698 015 1068
+											</a>
+											<a href="https://wa.me/306980151068" class="btn btn-secondary btn-whatsapp">
+												<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+													<path
+														d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+												</svg>
+												WhatsApp
+											</a>
+										</div>
+									</div>
+
+									<div class="booking-cta-merged__features">
+										<div class="booking-cta-merged__feature">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+											</svg>
+											Κράτηση σε 5 Λεπτά
+										</div>
+										<div class="booking-cta-merged__feature">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+											</svg>
+											Χωρίς Πιστωτική Κάρτα
+										</div>
+										<div class="booking-cta-merged__feature">
+											<svg viewBox="0 0 24 24" fill="currentColor">
+												<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+											</svg>
+											Άμεση Επιβεβαίωση
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="benefits">
+			<div class="container">
+				<h2 class="section-title">Γιατί να Επιλέξετε Εμάς</h2>
+
+				<div class="benefits__grid">
+					<div class="benefit-card">
+						<div class="benefit-card__icon">
 							<svg viewBox="0 0 24 24" fill="currentColor">
 								<path
-									d="M16 11C17.66 11 18.99 9.66 18.99 8S17.66 5 16 5 13.01 6.34 13.01 8 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8S9.66 5 8 5 5.01 6.34 5.01 8 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" />
+									d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z" />
 							</svg>
-							500+ Ικανοποιημένοι Πελάτες
 						</div>
-						<div class="hero__trust-item">
+						<h3 class="benefit-card__title">Χωρίς Πιστωτική Κάρτα</h3>
+						<p class="benefit-card__desc">Δεκτά μετρητά και κάρτες. Ευέλικτες επιλογές πληρωμής για την
+							άνεσή
+							σας.</p>
+					</div>
+
+					<div class="benefit-card">
+						<div class="benefit-card__icon">
 							<svg viewBox="0 0 24 24" fill="currentColor">
 								<path
 									d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
 							</svg>
-							24/7 Υποστήριξη
 						</div>
+						<h3 class="benefit-card__title">Παράδοση σε 30 Λεπτά</h3>
+						<p class="benefit-card__desc">Γρήγορη παράδοση στο λιμάνι Πειραιά ή το αεροδρόμιο Αθηνών.</p>
 					</div>
 
-					<div class="hero__actions">
-						<a class="hero__button hero__button--call" href="tel:+306980151068">
-							Κάλεσέ μας
-						</a>
-						<a class="hero__button hero__button--book" href="/product-category/rental/car/">
-							Κράτηση Τώρα
-						</a>
-						<a class="hero__button hero__button--primary" href="/contact/">Book a Call</a>
-						<a class="hero__button hero__button--whatsapp" href="https://wa.me/306980151068" target="_blank"
-							rel="noopener">WhatsApp</a>
-					</div>
-				</div>
-
-				<div class="hero__right">
-					<!-- FleetOS Booking Form -->
-					<div class="fleetos-booking-form-wrapper">
-						<div class="fleetos-booking-form-container">
-							<!-- Progress Indicator -->
-							<div class="fleetos-progress-indicator">
-								<div class="fleetos-progress-step active">
-									<span class="fleetos-progress-number">1</span>
-									<span class="fleetos-progress-text">Check Availability</span>
-								</div>
-								<div class="fleetos-progress-line"></div>
-								<div class="fleetos-progress-step">
-									<span class="fleetos-progress-number">2</span>
-									<span class="fleetos-progress-text">Book Vehicle</span>
-								</div>
-							</div>
-
-							<form class="fleetos-booking-form" method="post">
-								<!-- Vehicle Type Selector -->
-								<div class="fleetos-vehicle-type-selector">
-									<div class="fleetos-vehicle-type-item active" data-type="car">
-										<div class="fleetos-vehicle-icon">
-											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1h-11c-.66 0-1.22.42-1.42 1.01L3 8v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1V8l-2.08-5.99zM6.5 12c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm11 0c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12zM5 7l1.5-4.5h11L19 7H5z"
-													fill="currentColor"></path>
-											</svg>
-										</div>
-										<span class="fleetos-vehicle-label">CAR</span>
-									</div>
-									<div class="fleetos-vehicle-type-item" data-type="atv">
-										<div class="fleetos-vehicle-icon">
-											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M20 8h-1.82l-1.68-4.64C16.19 2.53 15.44 2 14.6 2H9.4c-.84 0-1.59.53-1.9 1.36L5.82 8H4c-1.1 0-2 .9-2 2v2c0 .55.45 1 1 1h1v6c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-5h4v5c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-6h1c.55 0 1-.45 1-1v-2c0-1.1-.9-2-2-2zm-12 0l1.1-3h5.8L15 8H8zm-1 4c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"
-													fill="currentColor"></path>
-											</svg>
-										</div>
-										<span class="fleetos-vehicle-label">ATV</span>
-									</div>
-									<div class="fleetos-vehicle-type-item" data-type="scooter">
-										<div class="fleetos-vehicle-icon">
-											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.65L13.52 14H10V9H6c-2.21 0-4 1.79-4 4v3h2c0 1.66 1.34 3 3 3s3-1.34 3-3h4.48L19 10.35V7zM7 17c-.55 0-1-.45-1-1h2c0 .55-.45 1-1 1z"
-													fill="currentColor"></path>
-												<path
-													d="M9 6H6V4h3v2zm10 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"
-													fill="currentColor"></path>
-											</svg>
-										</div>
-										<span class="fleetos-vehicle-label">SCOOTER</span>
-									</div>
-								</div>
-
-								<input type="hidden" name="vehicle_type" id="vehicle_type" value="car">
-
-								<!-- Compact Form Fields -->
-								<div class="fleetos-form-compact">
-									<div class="fleetos-form-group-compact">
-										<label for="pickup_location_id" class="fleetos-label-compact">
-											<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"
-													fill="currentColor"></path>
-											</svg>
-											Pickup Location
-										</label>
-										<select name="pickup_location_id" id="pickup_location_id"
-											class="fleetos-input-compact" required>
-											<option value="">Select Location</option>
-											<option value="08855dee-c0d7-45c3-95c2-6a2076bb24cf">Λιμάνι Πειραια</option>
-											<option value="29a72975-019b-4cd3-a100-a4ccb2a68e99">Αεροδρόμιο Αθηνών
-											</option>
-											<option value="41bd87d7-c049-426c-935e-e673165a900c">Πλατεία Συντάγματος
-											</option>
-											<option value="dc426294-1e42-4a00-a869-6130e944591b">Κεντρικό Γραφείο
-											</option>
-										</select>
-									</div>
-
-									<div class="fleetos-form-row-compact">
-										<div class="fleetos-form-group-compact">
-											<label for="pickup_date" class="fleetos-label-compact">
-												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z"
-														fill="currentColor"></path>
-												</svg>
-												Pickup
-											</label>
-											<input type="date" name="pickup_date" id="pickup_date"
-												class="fleetos-input-compact" required>
-										</div>
-										<div class="fleetos-form-group-compact">
-											<label for="pickup_time" class="fleetos-label-compact">
-												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
-														fill="currentColor"></path>
-												</svg>
-												Time
-											</label>
-											<select name="pickup_time" id="pickup_time" class="fleetos-input-compact"
-												required>
-												<option value="">Select Time</option>
-												<option value="07:00">07:00</option>
-												<option value="07:30">07:30</option>
-												<option value="08:00">08:00</option>
-												<option value="08:30">08:30</option>
-												<option value="09:00">09:00</option>
-												<option value="09:30">09:30</option>
-												<option value="10:00">10:00</option>
-												<option value="10:30">10:30</option>
-												<option value="11:00">11:00</option>
-												<option value="11:30">11:30</option>
-												<option value="12:00">12:00</option>
-												<option value="12:30">12:30</option>
-												<option value="13:00">13:00</option>
-												<option value="13:30">13:30</option>
-												<option value="14:00">14:00</option>
-												<option value="14:30">14:30</option>
-												<option value="15:00">15:00</option>
-												<option value="15:30">15:30</option>
-												<option value="16:00">16:00</option>
-												<option value="16:30">16:30</option>
-												<option value="17:00">17:00</option>
-												<option value="17:30">17:30</option>
-												<option value="18:00">18:00</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="fleetos-form-row-compact">
-										<div class="fleetos-form-group-compact">
-											<label for="return_date" class="fleetos-label-compact">
-												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V8H19V19ZM7 10H9V12H7V10ZM11 10H13V12H11V10ZM15 10H17V12H15V10Z"
-														fill="currentColor"></path>
-												</svg>
-												Return
-											</label>
-											<input type="date" name="return_date" id="return_date"
-												class="fleetos-input-compact" required>
-										</div>
-										<div class="fleetos-form-group-compact">
-											<label for="return_time" class="fleetos-label-compact">
-												<svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"
-														fill="currentColor"></path>
-												</svg>
-												Time
-											</label>
-											<select name="return_time" id="return_time" class="fleetos-input-compact"
-												required>
-												<option value="">Select Time</option>
-												<option value="07:00">07:00</option>
-												<option value="07:30">07:30</option>
-												<option value="08:00">08:00</option>
-												<option value="08:30">08:30</option>
-												<option value="09:00">09:00</option>
-												<option value="09:30">09:30</option>
-												<option value="10:00">10:00</option>
-												<option value="10:30">10:30</option>
-												<option value="11:00">11:00</option>
-												<option value="11:30">11:30</option>
-												<option value="12:00">12:00</option>
-												<option value="12:30">12:30</option>
-												<option value="13:00">13:00</option>
-												<option value="13:30">13:30</option>
-												<option value="14:00">14:00</option>
-												<option value="14:30">14:30</option>
-												<option value="15:00">15:00</option>
-												<option value="15:30">15:30</option>
-												<option value="16:00">16:00</option>
-												<option value="16:30">16:30</option>
-												<option value="17:00">17:00</option>
-												<option value="17:30">17:30</option>
-												<option value="18:00">18:00</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="fleetos-submit-button-modern">
-										<button type="submit"
-											style="background: none; border: none; color: inherit; cursor: pointer; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
-											<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-												<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-											</svg>
-											Search Available Cars
-										</button>
-									</div>
-								</div>
-
-								<!-- Trust Elements -->
-								<div class="fleetos-trust-elements">
-									<div class="fleetos-trust-item">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-										</svg>
-										No Credit Card Required
-									</div>
-									<div class="fleetos-trust-item">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path
-												d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
-										</svg>
-										Free Delivery & Pickup
-									</div>
-									<div class="fleetos-trust-item">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path
-												d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
-										</svg>
-										24/7 Support
-									</div>
-								</div>
-							</form>
-
-							<!-- Booking CTA Merged -->
-							<div class="booking-cta-merged">
-								<h2 class="booking-cta-merged__title">Βρείτε το Ιδανικό Αυτοκίνητο για Εσάς</h2>
-								<p class="booking-cta-merged__subtitle">Δείτε τον στόλο μας και κάντε κράτηση σε
-									λιγότερο από 5 λεπτά</p>
-
-								<div class="booking-cta-merged__buttons">
-									<a href="/product-category/rental/car/" class="btn btn-primary btn-large">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-											<path
-												d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
-										</svg>
-										Δείτε Διαθέσιμα Οχήματα & Κάντε Κράτηση
-									</a>
-
-									<div class="booking-cta-merged__or">
-										<span>ή επικοινωνήστε μαζί μας</span>
-									</div>
-
-									<div class="booking-cta-merged__contact">
-										<a href="tel:+306980151068" class="btn btn-secondary">
-											<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2">
-												<path
-													d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-												</path>
-											</svg>
-											+30 698 015 1068
-										</a>
-										<a href="https://wa.me/306980151068" class="btn btn-secondary btn-whatsapp">
-											<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-												<path
-													d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-											</svg>
-											WhatsApp
-										</a>
-									</div>
-								</div>
-
-								<div class="booking-cta-merged__features">
-									<div class="booking-cta-merged__feature">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-										</svg>
-										Κράτηση σε 5 Λεπτά
-									</div>
-									<div class="booking-cta-merged__feature">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-										</svg>
-										Χωρίς Πιστωτική Κάρτα
-									</div>
-									<div class="booking-cta-merged__feature">
-										<svg viewBox="0 0 24 24" fill="currentColor">
-											<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-										</svg>
-										Άμεση Επιβεβαίωση
-									</div>
-								</div>
-							</div>
+					<div class="benefit-card">
+						<div class="benefit-card__icon">
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path
+									d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+							</svg>
 						</div>
+						<h3 class="benefit-card__title">Μηνιαία Ενοικίαση από €300</h3>
+						<p class="benefit-card__desc">Οικονομικές μηνιαίες τιμές με πλήρη ασφάλεια και υποστήριξη.</p>
+					</div>
+
+					<div class="benefit-card">
+						<div class="benefit-card__icon">
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path
+									d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" />
+							</svg>
+						</div>
+						<h3 class="benefit-card__title">Ελληνική Εξυπηρέτηση 24/7</h3>
+						<p class="benefit-card__desc">Πάντα εδώ για να σας βοηθήσουμε, στα ελληνικά, όποτε μας
+							χρειαστείτε.
+						</p>
 					</div>
 				</div>
 			</div>
-	</section>
+		</section>
 
-	<!-- Benefits Section -->
-	<section class="benefits">
-		<div class="container">
-			<h2 class="section-title">Γιατί να Επιλέξετε Εμάς</h2>
+		<!-- Monthly Rental CTA -->
+		<section class="monthly-cta">
+			<div class="monthly-cta__container">
+				<h2 class="monthly-cta__title">Μηνιαία Ενοικίαση Αυτοκινήτου</h2>
+				<p class="monthly-cta__subtitle">Η καλύτερη επιλογή για μακροχρόνιες ανάγκες</p>
 
-			<div class="benefits__grid">
-				<div class="benefit-card">
-					<div class="benefit-card__icon">
+				<div class="monthly-cta__price">από €350/μήνα</div>
+
+				<div class="monthly-cta__features">
+					<div class="monthly-cta__feature">
 						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path
-								d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z" />
+							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
 						</svg>
+						Χωρίς Κρυφές Χρεώσεις
 					</div>
-					<h3 class="benefit-card__title">Χωρίς Πιστωτική Κάρτα</h3>
-					<p class="benefit-card__desc">Δεκτά μετρητά και κάρτες. Ευέλικτες επιλογές πληρωμής για την άνεσή
-						σας.</p>
-				</div>
-
-				<div class="benefit-card">
-					<div class="benefit-card__icon">
+					<div class="monthly-cta__feature">
 						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path
-								d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
 						</svg>
+						Πλήρης Ασφάλεια
 					</div>
-					<h3 class="benefit-card__title">Παράδοση σε 30 Λεπτά</h3>
-					<p class="benefit-card__desc">Γρήγορη παράδοση στο λιμάνι Πειραιά ή το αεροδρόμιο Αθηνών.</p>
-				</div>
-
-				<div class="benefit-card">
-					<div class="benefit-card__icon">
+					<div class="monthly-cta__feature">
 						<svg viewBox="0 0 24 24" fill="currentColor">
-							<path
-								d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" />
+							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
 						</svg>
+						2000 km/μήνα
 					</div>
-					<h3 class="benefit-card__title">Μηνιαία Ενοικίαση από €300</h3>
-					<p class="benefit-card__desc">Οικονομικές μηνιαίες τιμές με πλήρη ασφάλεια και υποστήριξη.</p>
-				</div>
-
-				<div class="benefit-card">
-					<div class="benefit-card__icon">
+					<div class="monthly-cta__feature">
 						<svg viewBox="0 0 24 24" fill="currentColor">
+							<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+						</svg>
+						Δωρεάν Παράδοση
+					</div>
+				</div>
+
+				<div class="monthly-cta__buttons">
+					<a href="/athens-monthly-car-rentals/" class="btn btn-primary">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 							<path
-								d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" />
+								d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
 						</svg>
-					</div>
-					<h3 class="benefit-card__title">Ελληνική Εξυπηρέτηση 24/7</h3>
-					<p class="benefit-card__desc">Πάντα εδώ για να σας βοηθήσουμε, στα ελληνικά, όποτε μας χρειαστείτε.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Monthly Rental CTA -->
-	<section class="monthly-cta">
-		<div class="monthly-cta__container">
-			<h2 class="monthly-cta__title">Μηνιαία Ενοικίαση Αυτοκινήτου</h2>
-			<p class="monthly-cta__subtitle">Η καλύτερη επιλογή για μακροχρόνιες ανάγκες</p>
-
-			<div class="monthly-cta__price">από €350/μήνα</div>
-
-			<div class="monthly-cta__features">
-				<div class="monthly-cta__feature">
-					<svg viewBox="0 0 24 24" fill="currentColor">
-						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-					</svg>
-					Χωρίς Κρυφές Χρεώσεις
-				</div>
-				<div class="monthly-cta__feature">
-					<svg viewBox="0 0 24 24" fill="currentColor">
-						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-					</svg>
-					Πλήρης Ασφάλεια
-				</div>
-				<div class="monthly-cta__feature">
-					<svg viewBox="0 0 24 24" fill="currentColor">
-						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-					</svg>
-					2000 km/μήνα
-				</div>
-				<div class="monthly-cta__feature">
-					<svg viewBox="0 0 24 24" fill="currentColor">
-						<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
-					</svg>
-					Δωρεάν Παράδοση
-				</div>
-			</div>
-
-			<div class="monthly-cta__buttons">
-				<a href="/athens-monthly-car-rentals/" class="btn btn-primary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-						<path
-							d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
-					</svg>
-					Δείτε Διαθέσιμα Αυτοκίνητα
-				</a>
-				<a href="tel:+306980151068" class="btn btn-secondary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path
-							d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-						</path>
-					</svg>
-					Καλέστε Μας Τώρα
-				</a>
-				<a href="https://wa.me/306980151068" class="btn btn-secondary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-						<path
-							d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-					</svg>
-					WhatsApp
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- Featured Vehicles Section -->
-	<section class="benefits">
-		<div class="container">
-			<h2 class="section-title">Δημοφιλή Οχήματα</h2>
-
-			<div class="benefits__grid">
-				<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-					<div class="benefit-card__image-wrapper">
-						<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car.jpg"
-							alt="Ενοικίαση Fiat Panda Hybrid 2023 Πειραιάς - €35 ημερησίως, €450 μηνιαίως"
-							itemprop="image">
-					</div>
-					<div class="benefit-card__content">
-						<h3 class="benefit-card__title" itemprop="name">Fiat Panda Hybrid</h3>
-						<p class="benefit-card__desc" itemprop="description">Οικονομικό & Οικολογικό</p>
-						<div class="benefit-card__pricing">
-							<div class="benefit-card__price-row">
-								<span class="benefit-card__price-badge" itemprop="offers" itemscope
-									itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Ημερήσια</span>
-									€<span itemprop="price">35</span>
-								</span>
-								<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
-									itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Μηνιαία</span>
-									€<span itemprop="price">450</span>
-								</span>
-							</div>
-							<div class="benefit-card__km-info">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-								120 km/ημέρα | 2000 km/μήνα
-							</div>
-						</div>
-						<div class="benefit-card__tags">
-							<span class="benefit-card__tag">🚗 City Car</span>
-							<span class="benefit-card__tag">⚙️ Χειροκίνητο</span>
-							<span class="benefit-card__tag">❄️ A/C</span>
-						</div>
-						<meta itemprop="brand" content="Fiat">
-						<meta itemprop="model" content="Panda Hybrid">
-						<div class="benefit-card__button">
-							<a href="/product-category/rental/car/" class="btn btn-primary">
-								Κράτηση
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-					<div class="benefit-card__image-wrapper">
-						<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car.jpg"
-							alt="Ενοικίαση Jeep Renegade Πειραιάς - €80 ημερησίως, €750 μηνιαίως, Αυτόματο SUV"
-							itemprop="image">
-					</div>
-					<div class="benefit-card__content">
-						<h3 class="benefit-card__title" itemprop="name">Jeep Renegade</h3>
-						<p class="benefit-card__desc" itemprop="description">SUV με Στυλ & Άνεση</p>
-						<div class="benefit-card__pricing">
-							<div class="benefit-card__price-row">
-								<span class="benefit-card__price-badge" itemprop="offers" itemscope
-									itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Ημερήσια</span>
-									€<span itemprop="price">80</span>
-								</span>
-								<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
-									itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Μηνιαία</span>
-									€<span itemprop="price">750</span>
-								</span>
-							</div>
-							<div class="benefit-card__km-info">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-								120 km/ημέρα | 2000 km/μήνα
-							</div>
-						</div>
-						<div class="benefit-card__tags">
-							<span class="benefit-card__tag">🚙 SUV</span>
-							<span class="benefit-card__tag">🔄 Αυτόματο</span>
-							<span class="benefit-card__tag">❄️ A/C</span>
-						</div>
-						<meta itemprop="brand" content="Jeep">
-						<meta itemprop="model" content="Renegade">
-						<div class="benefit-card__button">
-							<a href="/product-category/rental/car/" class="btn btn-primary">
-								Κράτηση
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
-					<div class="benefit-card__image-wrapper">
-						<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car.jpg"
-							alt="Ενοικίαση Mercedes Benz A-Class Πειραιάς - €150 ημερησίως, €1200 μηνιαίως, Luxury Αυτόματο"
-							itemprop="image">
-					</div>
-					<div class="benefit-card__content">
-						<h3 class="benefit-card__title" itemprop="name">Mercedes Benz A-Class</h3>
-						<p class="benefit-card__desc" itemprop="description">Πολυτέλεια & Κομψότητα</p>
-						<div class="benefit-card__pricing">
-							<div class="benefit-card__price-row">
-								<span class="benefit-card__price-badge" itemprop="offers" itemscope
-									itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Ημερήσια</span>
-									€<span itemprop="price">150</span>
-								</span>
-								<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
-									itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-									<meta itemprop="priceCurrency" content="EUR">
-									<span class="benefit-card__price-label">Μηνιαία</span>
-									€<span itemprop="price">1200</span>
-								</span>
-							</div>
-							<div class="benefit-card__km-info">
-								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-									<circle cx="12" cy="10" r="3"></circle>
-								</svg>
-								120 km/ημέρα | 2000 km/μήνα
-							</div>
-						</div>
-						<div class="benefit-card__tags">
-							<span class="benefit-card__tag">⭐ Luxury</span>
-							<span class="benefit-card__tag">🔄 Αυτόματο</span>
-							<span class="benefit-card__tag">❄️ A/C</span>
-						</div>
-						<meta itemprop="brand" content="Mercedes-Benz">
-						<meta itemprop="model" content="A-Class">
-						<div class="benefit-card__button">
-							<a href="/product-category/rental/car/" class="btn btn-primary">
-								Κράτηση
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-									stroke-width="2">
-									<path d="M5 12h14M12 5l7 7-7 7"></path>
-								</svg>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div style="text-align: center; margin-top: 40px;">
-				<a href="/product-category/rental/car/" class="btn btn-secondary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-						<path
-							d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
-					</svg>
-					Δείτε Όλα τα Οχήματα
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- Testimonials Section -->
-	<section class="monthly-cta" style="background: #f9fafb; color: #1f2937;">
-		<div class="monthly-cta__container">
-			<h2 class="monthly-cta__title" style="color: #111827;">Τι Λένε οι Πελάτες μας</h2>
-			<p class="monthly-cta__subtitle" style="color: #6b7280;">Πάνω από 238 κριτικές με μέσο όρο 4.8 ⭐</p>
-
-			<div
-				style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; text-align: left;">
-				<div
-					style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-					<div style="display: flex; gap: 4px; margin-bottom: 15px;">
-						<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
-					</div>
-					<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Εξαιρετική εξυπηρέτηση! Παρέλαβα
-						το αυτοκίνητο στο λιμάνι του Πειραιά σε 20 λεπτά. Πολύ οικονομικές τιμές για μηνιαία ενοικίαση."
-					</p>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
-							ΝΠ</div>
-						<div>
-							<div style="font-weight: 600; color: #111827;">Νίκος Παπαδόπουλος</div>
-							<div style="font-size: 0.875rem; color: #6b7280;">Δεκέμβριος 2023</div>
-						</div>
-					</div>
-				</div>
-
-				<div
-					style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-					<div style="display: flex; gap: 4px; margin-bottom: 15px;">
-						<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
-					</div>
-					<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Πολύ καλή εμπειρία! Το αυτοκίνητο
-						ήταν καθαρό και σε άριστη κατάσταση. Προτείνω ανεπιφύλακτα για μηνιαία ενοικίαση."</p>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
-							ΜΚ</div>
-						<div>
-							<div style="font-weight: 600; color: #111827;">Μαρία Κωνσταντίνου</div>
-							<div style="font-size: 0.875rem; color: #6b7280;">Νοέμβριος 2023</div>
-						</div>
-					</div>
-				</div>
-
-				<div
-					style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
-					<div style="display: flex; gap: 4px; margin-bottom: 15px;">
-						<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
-					</div>
-					<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Άριστη εξυπηρέτηση στα ελληνικά.
-						Με βοήθησαν πολύ με την παράδοση στο αεροδρόμιο. Θα τους ξαναχρησιμοποιήσω σίγουρα!"</p>
-					<div style="display: flex; align-items: center; gap: 12px;">
-						<div
-							style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
-							ΓΣ</div>
-						<div>
-							<div style="font-weight: 600; color: #111827;">Γιώργος Σταματόπουλος</div>
-							<div style="font-size: 0.875rem; color: #6b7280;">Οκτώβριος 2023</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- FAQ Section -->
-	<section class="benefits faq-section">
-		<div class="container faq-container">
-			<h2 class="section-title">Συχνές Ερωτήσεις</h2>
-
-			<div class="faq-list">
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Ποια είναι η ελάχιστη διάρκεια ενοικίασης;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Η ελάχιστη διάρκεια ενοικίασης είναι 1 ημέρα για ημερήσια
-						ενοικίαση και 1 μήνας για μηνιαία ενοικίαση. Προσφέρουμε ειδικές τιμές για μακροχρόνιες
-						ενοικιάσεις.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Τι χρειάζομαι για να ενοικιάσω αυτοκίνητο;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Χρειάζεστε έγκυρη άδεια οδήγησης (τουλάχιστον 1 έτος),
-						ταυτότητα ή διαβατήριο. Για μηνιαία ενοικίαση δεχόμαστε μετρητά και κάρτες.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Κάνετε παράδοση στο λιμάνι Πειραιά;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Ναι! Κάνουμε παράδοση στο λιμάνι Πειραιά, αεροδρόμιο Αθηνών
-						και άλλες τοποθεσίες εντός Αθηνών. Η παράδοση γίνεται σε 20-30 λεπτά από την κλήση σας.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Τι περιλαμβάνει η μηνιαία ενοικίαση;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Η μηνιαία ενοικίαση περιλαμβάνει πλήρη ασφάλεια, 2000
-						km/μήνα, 24/7 υποστήριξη, δωρεάν παράδοση και παραλαβή, και συντήρηση του οχήματος.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Υπάρχει όριο χιλιομέτρων;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Για μηνιαία ενοικίαση το όριο είναι 2000 km/μήνα. Για
-						ημερήσια ενοικίαση το όριο είναι 120 km/ημέρα. Επιπλέον χιλιόμετρα χρεώνονται ξεχωριστά.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Τι γίνεται αν ξεπεράσω τα χιλιόμετρα;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Τα επιπλέον χιλιόμετρα πέρα από το όριο (120 km/ημέρα ή
-						2000 km/μήνα) χρεώνονται με πρόσθετο κόστος. Επικοινωνήστε μαζί μας για ακριβείς τιμές και
-						ειδικά πακέτα.</p>
-				</div>
-
-				<div class="benefit-card faq-item">
-					<button class="faq-question" type="button" aria-expanded="false">
-						<span class="faq-question__title">Μπορώ να ακυρώσω την κράτησή μου;</span>
-						<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-					<p class="benefit-card__desc faq-answer">Ναι, μπορείτε να ακυρώσετε έως 24 ώρες πριν την
-						προγραμματισμένη παράδοση χωρίς χρέωση. Επικοινωνήστε μαζί μας τηλεφωνικά ή μέσω email.</p>
-				</div>
-			</div>
-
-			<div
-				style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 16px; color: #ffffff;">
-				<h3 style="font-size: 1.75rem; margin-bottom: 15px;">Έχετε άλλες ερωτήσεις;</h3>
-				<p style="margin-bottom: 25px; opacity: 0.95;">Η ομάδα μας είναι εδώ για να σας βοηθήσει 24/7</p>
-				<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+						Δείτε Διαθέσιμα Αυτοκίνητα
+					</a>
 					<a href="tel:+306980151068" class="btn btn-secondary">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
 							stroke-width="2">
@@ -2896,7 +2560,7 @@
 								d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
 							</path>
 						</svg>
-						Καλέστε Μας
+						Καλέστε Μας Τώρα
 					</a>
 					<a href="https://wa.me/306980151068" class="btn btn-secondary">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2905,42 +2569,422 @@
 						</svg>
 						WhatsApp
 					</a>
-					<a href="/contact/" class="btn btn-secondary">
-						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2">
-							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-							</path>
-							<polyline points="22,6 12,13 2,6"></polyline>
+				</div>
+			</div>
+		</section>
+
+		<!-- Featured Vehicles Section -->
+		<section class="benefits">
+			<div class="container">
+				<h2 class="section-title">Δημοφιλή Οχήματα</h2>
+
+				<div class="benefits__grid">
+					<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+						<div class="benefit-card__image-wrapper">
+							<picture>
+								<source type="image/webp"
+									srcset="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car-768x384.jpg.webp">
+								<img src="/wp-content/uploads/2023/12/Fiat-Panda-Hybrid-2023-Piraeus-Rent-A-Car-768x384.jpg"
+									alt="Ενοικίαση Fiat Panda Hybrid 2023 Πειραιάς - €35 ημερησίως, €450 μηνιαίως"
+									itemprop="image" loading="lazy" width="768" height="384" decoding="async">
+							</picture>
+						</div>
+						<div class="benefit-card__content">
+							<h3 class="benefit-card__title" itemprop="name">Fiat Panda Hybrid</h3>
+							<p class="benefit-card__desc" itemprop="description">Οικονομικό & Οικολογικό</p>
+							<div class="benefit-card__pricing">
+								<div class="benefit-card__price-row">
+									<span class="benefit-card__price-badge" itemprop="offers" itemscope
+										itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Ημερήσια</span>
+										€<span itemprop="price">35</span>
+									</span>
+									<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
+										itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Μηνιαία</span>
+										€<span itemprop="price">450</span>
+									</span>
+								</div>
+								<div class="benefit-card__km-info">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+										<circle cx="12" cy="10" r="3"></circle>
+									</svg>
+									120 km/ημέρα | 2000 km/μήνα
+								</div>
+							</div>
+							<div class="benefit-card__tags">
+								<span class="benefit-card__tag">🚗 City Car</span>
+								<span class="benefit-card__tag">⚙️ Χειροκίνητο</span>
+								<span class="benefit-card__tag">❄️ A/C</span>
+							</div>
+							<meta itemprop="brand" content="Fiat">
+							<meta itemprop="model" content="Panda Hybrid">
+							<div class="benefit-card__button">
+								<a href="/product-category/rental/car/" class="btn btn-primary">
+									Κράτηση
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M5 12h14M12 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+						<div class="benefit-card__image-wrapper">
+							<picture>
+								<source type="image/webp"
+									srcset="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car-768x384.jpg">
+								<img src="/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car-768x384.jpg"
+									alt="Ενοικίαση Jeep Renegade Πειραιάς - €80 ημερησίως, €750 μηνιαίως, Αυτόματο SUV"
+									itemprop="image" loading="lazy" width="768" height="384" decoding="async">
+							</picture>
+						</div>
+						<div class="benefit-card__content">
+							<h3 class="benefit-card__title" itemprop="name">Jeep Renegade</h3>
+							<p class="benefit-card__desc" itemprop="description">SUV με Στυλ & Άνεση</p>
+							<div class="benefit-card__pricing">
+								<div class="benefit-card__price-row">
+									<span class="benefit-card__price-badge" itemprop="offers" itemscope
+										itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Ημερήσια</span>
+										€<span itemprop="price">80</span>
+									</span>
+									<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
+										itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Μηνιαία</span>
+										€<span itemprop="price">750</span>
+									</span>
+								</div>
+								<div class="benefit-card__km-info">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+										<circle cx="12" cy="10" r="3"></circle>
+									</svg>
+									120 km/ημέρα | 2000 km/μήνα
+								</div>
+							</div>
+							<div class="benefit-card__tags">
+								<span class="benefit-card__tag">🚙 SUV</span>
+								<span class="benefit-card__tag">🔄 Αυτόματο</span>
+								<span class="benefit-card__tag">❄️ A/C</span>
+							</div>
+							<meta itemprop="brand" content="Jeep">
+							<meta itemprop="model" content="Renegade">
+							<div class="benefit-card__button">
+								<a href="/product-category/rental/car/" class="btn btn-primary">
+									Κράτηση
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M5 12h14M12 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="benefit-card" itemscope itemtype="https://schema.org/Product">
+						<div class="benefit-card__image-wrapper">
+							<picture>
+								<source type="image/webp"
+									srcset="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car-768x384.jpg.webp">
+								<img src="/wp-content/uploads/2023/12/Mercedes-Benz-Piraeus-Rent-A-Car-768x384.jpg"
+									alt="Ενοικίαση Mercedes Benz A-Class Πειραιάς - €150 ημερησίως, €1200 μηνιαίως, Luxury Αυτόματο"
+									itemprop="image" loading="lazy" width="768" height="384" decoding="async">
+							</picture>
+						</div>
+						<div class="benefit-card__content">
+							<h3 class="benefit-card__title" itemprop="name">Mercedes Benz A-Class</h3>
+							<p class="benefit-card__desc" itemprop="description">Πολυτέλεια & Κομψότητα</p>
+							<div class="benefit-card__pricing">
+								<div class="benefit-card__price-row">
+									<span class="benefit-card__price-badge" itemprop="offers" itemscope
+										itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Ημερήσια</span>
+										€<span itemprop="price">150</span>
+									</span>
+									<span class="benefit-card__price-badge benefit-card__price-badge--monthly"
+										itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+										<meta itemprop="priceCurrency" content="EUR">
+										<span class="benefit-card__price-label">Μηνιαία</span>
+										€<span itemprop="price">1200</span>
+									</span>
+								</div>
+								<div class="benefit-card__km-info">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+										<circle cx="12" cy="10" r="3"></circle>
+									</svg>
+									120 km/ημέρα | 2000 km/μήνα
+								</div>
+							</div>
+							<div class="benefit-card__tags">
+								<span class="benefit-card__tag">⭐ Luxury</span>
+								<span class="benefit-card__tag">🔄 Αυτόματο</span>
+								<span class="benefit-card__tag">❄️ A/C</span>
+							</div>
+							<meta itemprop="brand" content="Mercedes-Benz">
+							<meta itemprop="model" content="A-Class">
+							<div class="benefit-card__button">
+								<a href="/product-category/rental/car/" class="btn btn-primary">
+									Κράτηση
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+										stroke-width="2">
+										<path d="M5 12h14M12 5l7 7-7 7"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div style="text-align: center; margin-top: 40px;">
+					<a href="/product-category/rental/car/" class="btn btn-secondary">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+							<path
+								d="M18.92 2.01C18.72 1.42 18.16 1 17.5 1H6.5C5.84 1 5.29 1.42 5.08 2.01L3 8V16C3 16.55 3.45 17 4 17H5C5.55 17 6 16.55 6 16V15H18V16C18 16.55 18.45 17 19 17H20C20.55 17 21 16.55 21 16V8L18.92 2.01ZM6.5 12C5.67 12 5 11.33 5 10.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12ZM17.5 12C16.67 12 16 11.33 16 10.5S16.67 9 17.5 9 19 9.67 19 10.5 18.33 12 17.5 12ZM5 7L6.5 2.5H17.5L19 7H5Z" />
 						</svg>
-						Στείλτε Email
+						Δείτε Όλα τα Οχήματα
 					</a>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- Map Section -->
-	<section class="benefits" style="padding: 60px 20px; background: #f9fafb;">
-		<div class="container">
-			<h2 class="section-title">Η Τοποθεσία μας</h2>
-			<div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.3825477857164!2d23.6391293!3d37.9281615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1b90211c5b3cb%3A0x682b232f39c03a5c!2sAGGELOS%20Rent%20A%20Car%20Piraeus%20-%20Athens!5e0!3m2!1sen!2sgr!4v1701782400000!5m2!1sen!2sgr"
-					width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<!-- Testimonials Section -->
+		<section class="monthly-cta" style="background: #f9fafb; color: #1f2937;">
+			<div class="monthly-cta__container">
+				<h2 class="monthly-cta__title" style="color: #111827;">Τι Λένε οι Πελάτες μας</h2>
+				<p class="monthly-cta__subtitle" style="color: #6b7280;">Πάνω από 238 κριτικές με μέσο όρο 4.8 ⭐</p>
+
+				<div
+					style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; text-align: left;">
+					<div
+						style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+						<div style="display: flex; gap: 4px; margin-bottom: 15px;">
+							<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
+						</div>
+						<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Εξαιρετική εξυπηρέτηση!
+							Παρέλαβα
+							το αυτοκίνητο στο λιμάνι του Πειραιά σε 20 λεπτά. Πολύ οικονομικές τιμές για μηνιαία
+							ενοικίαση."
+						</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<div
+								style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
+								ΝΠ</div>
+							<div>
+								<div style="font-weight: 600; color: #111827;">Νίκος Παπαδόπουλος</div>
+								<div style="font-size: 0.875rem; color: #6b7280;">Δεκέμβριος 2023</div>
+							</div>
+						</div>
+					</div>
+
+					<div
+						style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+						<div style="display: flex; gap: 4px; margin-bottom: 15px;">
+							<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
+						</div>
+						<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Πολύ καλή εμπειρία! Το
+							αυτοκίνητο
+							ήταν καθαρό και σε άριστη κατάσταση. Προτείνω ανεπιφύλακτα για μηνιαία ενοικίαση."</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<div
+								style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
+								ΜΚ</div>
+							<div>
+								<div style="font-weight: 600; color: #111827;">Μαρία Κωνσταντίνου</div>
+								<div style="font-size: 0.875rem; color: #6b7280;">Νοέμβριος 2023</div>
+							</div>
+						</div>
+					</div>
+
+					<div
+						style="background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+						<div style="display: flex; gap: 4px; margin-bottom: 15px;">
+							<span style="color: #fbbf24; font-size: 1.25rem;">⭐⭐⭐⭐⭐</span>
+						</div>
+						<p style="color: #1f2937; margin-bottom: 15px; line-height: 1.7;">"Άριστη εξυπηρέτηση στα
+							ελληνικά.
+							Με βοήθησαν πολύ με την παράδοση στο αεροδρόμιο. Θα τους ξαναχρησιμοποιήσω σίγουρα!"</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<div
+								style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 600;">
+								ΓΣ</div>
+							<div>
+								<div style="font-weight: 600; color: #111827;">Γιώργος Σταματόπουλος</div>
+								<div style="font-size: 0.875rem; color: #6b7280;">Οκτώβριος 2023</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div style="text-align: center; margin-top: 30px;">
-				<a href="https://www.google.com/maps/place/AGGELOS+Rent+A+Car+Piraeus+-+Athens/@37.9281615,23.6417043,17z"
-					target="_blank" rel="noopener" class="btn btn-primary">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-						<circle cx="12" cy="10" r="3"></circle>
-					</svg>
-					Οδηγίες στο Google Maps
-				</a>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="benefits faq-section">
+			<div class="container faq-container">
+				<h2 class="section-title">Συχνές Ερωτήσεις</h2>
+
+				<div class="faq-list">
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Ποια είναι η ελάχιστη διάρκεια ενοικίασης;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Η ελάχιστη διάρκεια ενοικίασης είναι 1 ημέρα για
+							ημερήσια
+							ενοικίαση και 1 μήνας για μηνιαία ενοικίαση. Προσφέρουμε ειδικές τιμές για μακροχρόνιες
+							ενοικιάσεις.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Τι χρειάζομαι για να ενοικιάσω αυτοκίνητο;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Χρειάζεστε έγκυρη άδεια οδήγησης (τουλάχιστον 1 έτος),
+							ταυτότητα ή διαβατήριο. Για μηνιαία ενοικίαση δεχόμαστε μετρητά και κάρτες.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Κάνετε παράδοση στο λιμάνι Πειραιά;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Ναι! Κάνουμε παράδοση στο λιμάνι Πειραιά, αεροδρόμιο
+							Αθηνών
+							και άλλες τοποθεσίες εντός Αθηνών. Η παράδοση γίνεται σε 20-30 λεπτά από την κλήση σας.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Τι περιλαμβάνει η μηνιαία ενοικίαση;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Η μηνιαία ενοικίαση περιλαμβάνει πλήρη ασφάλεια, 2000
+							km/μήνα, 24/7 υποστήριξη, δωρεάν παράδοση και παραλαβή, και συντήρηση του οχήματος.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Υπάρχει όριο χιλιομέτρων;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Για μηνιαία ενοικίαση το όριο είναι 2000 km/μήνα. Για
+							ημερήσια ενοικίαση το όριο είναι 120 km/ημέρα. Επιπλέον χιλιόμετρα χρεώνονται ξεχωριστά.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Τι γίνεται αν ξεπεράσω τα χιλιόμετρα;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Τα επιπλέον χιλιόμετρα πέρα από το όριο (120 km/ημέρα ή
+							2000 km/μήνα) χρεώνονται με πρόσθετο κόστος. Επικοινωνήστε μαζί μας για ακριβείς τιμές και
+							ειδικά πακέτα.</p>
+					</div>
+
+					<div class="benefit-card faq-item">
+						<button class="faq-question" type="button" aria-expanded="false">
+							<span class="faq-question__title">Μπορώ να ακυρώσω την κράτησή μου;</span>
+							<svg class="faq-question__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<p class="benefit-card__desc faq-answer">Ναι, μπορείτε να ακυρώσετε έως 24 ώρες πριν την
+							προγραμματισμένη παράδοση χωρίς χρέωση. Επικοινωνήστε μαζί μας τηλεφωνικά ή μέσω email.</p>
+					</div>
+				</div>
+
+				<div
+					style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); border-radius: 16px; color: #ffffff;">
+					<h3 style="font-size: 1.75rem; margin-bottom: 15px;">Έχετε άλλες ερωτήσεις;</h3>
+					<p style="margin-bottom: 25px; opacity: 0.95;">Η ομάδα μας είναι εδώ για να σας βοηθήσει 24/7</p>
+					<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+						<a href="tel:+306980151068" class="btn btn-secondary">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path
+									d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+								</path>
+							</svg>
+							Καλέστε Μας
+						</a>
+						<a href="https://wa.me/306980151068" class="btn btn-secondary">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+								<path
+									d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+							</svg>
+							WhatsApp
+						</a>
+						<a href="/contact/" class="btn btn-secondary">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2">
+								<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+								</path>
+								<polyline points="22,6 12,13 2,6"></polyline>
+							</svg>
+							Στείλτε Email
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+
+		<!-- Map Section -->
+		<section class="benefits" style="padding: 60px 20px; background: #f9fafb;">
+			<div class="container">
+				<h2 class="section-title">Η Τοποθεσία μας</h2>
+				<div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+					<iframe
+						data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.3825477857164!2d23.6391293!3d37.9281615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1b90211c5b3cb%3A0x682b232f39c03a5c!2sAGGELOS%20Rent%20A%20Car%20Piraeus%20-%20Athens!5e0!3m2!1sen!2sgr!4v1701782400000!5m2!1sen!2sgr"
+						width="100%" height="400" style="border:0;background:#e5e7eb;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade" title="Χάρτης τοποθεσίας Aggelos Rentals"></iframe>
+				</div>
+				<div style="text-align: center; margin-top: 30px;">
+					<a href="https://www.google.com/maps/place/AGGELOS+Rent+A+Car+Piraeus+-+Athens/@37.9281615,23.6417043,17z"
+						target="_blank" rel="noopener" class="btn btn-primary">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						Οδηγίες στο Google Maps
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
 
 	<!-- Footer -->
 	<footer class="modern-footer">
@@ -3088,19 +3132,27 @@
 					});
 				}
 			});
+
+			// Lazy load Google Maps iframe when it comes into view
+			const mapIframe = document.querySelector('iframe[data-src]');
+			if (mapIframe && 'IntersectionObserver' in window) {
+				const mapObserver = new IntersectionObserver(function (entries, observer) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) {
+							const iframe = entry.target;
+							iframe.src = iframe.dataset.src;
+							iframe.removeAttribute('data-src');
+							observer.unobserve(iframe);
+						}
+					});
+				}, { rootMargin: '200px 0px' });
+				mapObserver.observe(mapIframe);
+			} else if (mapIframe) {
+				// Fallback for browsers without IntersectionObserver
+				mapIframe.src = mapIframe.dataset.src;
+			}
 		})();
 	</script>
-
-	<script>
-		// FleetOS Configuration
-		var fleetosBooking = {
-			organizationSlug: 'aggelos-rentals',
-			redirectUrl: 'https://fleetos.io'
-		};
-	</script>
-
-	<!-- FleetOS Booking JavaScript -->
-	<script src="/fleetos-booking.js"></script>
 
 	<!-- Floating WhatsApp Button -->
 	<a href="https://wa.me/306980151068" target="_blank" rel="noopener" class="whatsapp-float"

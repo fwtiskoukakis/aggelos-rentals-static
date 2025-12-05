@@ -1,0 +1,195 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "aggelosrentals.com"
+                }
+            ],
+            "destination": "https://www.aggelosrentals.com/:1",
+            "permanent": true
+        },
+        {
+            "source": "/piraeus-port-car-rental(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/sitemap(.*)",
+            "destination": "/sitemap.html",
+            "permanent": true
+        },
+        {
+            "source": "/automatic-car-rental-piraeus(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/piraeus-car-rental-prices(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/vehicle/mercedes-a-class(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/en(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/type/economy(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/type/luxury(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/suv-rental-piraeus(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/cruise-port-car-rental(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/vehicle/jeep-renegade(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/vehicle/fiat-panda(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/athens-airport-to-piraeus(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/type/city(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/shop(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/product-category/rental/car/jeep(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/location/akti-themistokleous-104(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/product-category/rental(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/tag/car(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/type/car(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/location/athens-airport(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/manufacturer/jeep(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/type/suv(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/location/piraeus-port(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/vehicle/athens-airport(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/product-category/rental/car(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/category/car(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/product-category/rental/car/fiat(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/athens-monthly-car-rentals(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/gearbox/manual(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/gearbox/automatic(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/privacy-policy-2(.*)",
+            "destination": "/privacy-policy-2/",
+            "permanent": true
+        },
+        {
+            "source": "/steering/left(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/manufacturer/fiat(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/vehicle/piraeus-port(.*)",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/blog/.+2025(.*)",
+            "destination": "/blog/",
+            "permanent": true
+        }
+    ]
+}

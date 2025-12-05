@@ -1,14 +1,14 @@
 {
     "redirects": [
         {
-            "source": "/(.*)",
+            "source": "/:path*",
             "has": [
                 {
                     "type": "host",
                     "value": "aggelosrentals.com"
                 }
             ],
-            "destination": "https://www.aggelosrentals.com/:1",
+            "destination": "https://www.aggelosrentals.com/:path*",
             "permanent": true
         },
         {

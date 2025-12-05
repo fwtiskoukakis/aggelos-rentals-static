@@ -1,17 +1,6 @@
 {
     "redirects": [
         {
-            "source": "/:path*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "aggelosrentals.com"
-                }
-            ],
-            "destination": "https://www.aggelosrentals.com/:path*",
-            "permanent": true
-        },
-        {
             "source": "/piraeus-port-car-rental(.*)",
             "destination": "/",
             "permanent": true

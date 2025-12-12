@@ -77,11 +77,33 @@
 	}
 	</script>
 	
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDKQD655KK"></script>
+		<!-- Google Consent Mode v2 -->
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
+		
+		// Initialize Consent Mode with default 'denied' state
+		gtag('consent', 'default', {
+			'ad_storage': 'denied',
+			'ad_user_data': 'denied',
+			'ad_personalization': 'denied',
+			'analytics_storage': 'denied'
+		});
+		
+		// Check if user has already accepted cookies
+		if (localStorage.getItem('cookiesAccepted') === 'true') {
+			gtag('consent', 'update', {
+				'ad_storage': 'granted',
+				'ad_user_data': 'granted',
+				'ad_personalization': 'granted',
+				'analytics_storage': 'granted'
+			});
+		}
+	</script>
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDKQD655KK"></script>
+	<script>
 		gtag('js', new Date());
 		gtag('config', 'G-KDKQD655KK');
 	</script>
@@ -1045,7 +1067,18 @@
 	</style>
 
 	<script>
-		function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieConsent').classList.remove('show')}
+		function acceptCookies() {
+			localStorage.setItem('cookiesAccepted', 'true');
+			document.getElementById('cookieConsent').classList.remove('show');
+			
+			// Grant consent for Google Consent Mode v2
+			gtag('consent', 'update', {
+				'ad_storage': 'granted',
+				'ad_user_data': 'granted',
+				'ad_personalization': 'granted',
+				'analytics_storage': 'granted'
+			});
+		}
 		(function(){if(!localStorage.getItem('cookiesAccepted')){setTimeout(function(){document.getElementById('cookieConsent').classList.add('show')},1500)}})();
 	</script>
 <!-- Phone Call Event Tracking -->

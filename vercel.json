@@ -1,0 +1,136 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.aggelosrentals.com"
+        }
+      ],
+      "destination": "https://aggelosrentals.com/:1",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-port-car-rental",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-port-car-rental/:path*",
+      "destination": "/location/piraeus-port/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/automatic-car-rental-piraeus",
+      "destination": "/gearbox/automatic/",
+      "permanent": true
+    },
+    {
+      "source": "/automatic-car-rental-piraeus/:path*",
+      "destination": "/gearbox/automatic/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-car-rental-prices",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-car-rental-prices/:path*",
+      "destination": "/product-category/rental/car/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/mercedes-a-class",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/mercedes-a-class/:path*",
+      "destination": "/product-category/rental/car/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/type/economy",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/economy/:path*",
+      "destination": "/product-category/rental/car/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/type/luxury",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/luxury/:path*",
+      "destination": "/product-category/rental/car/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/suv-rental-piraeus",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/suv-rental-piraeus/:path*",
+      "destination": "/location/piraeus-port/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/cruise-port-car-rental",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/cruise-port-car-rental/:path*",
+      "destination": "/location/piraeus-port/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/jeep-renegade",
+      "destination": "/type/suv/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/jeep-renegade/:path*",
+      "destination": "/type/suv/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/fiat-panda",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/fiat-panda/:path*",
+      "destination": "/product-category/rental/car/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.html",
+      "permanent": false
+    },
+    {
+      "source": "/sitemap/:path*",
+      "destination": "/sitemap.html",
+      "permanent": false
+    }
+  ]
+}
+

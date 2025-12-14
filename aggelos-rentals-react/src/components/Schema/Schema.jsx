@@ -128,7 +128,7 @@ const CarRentalSchema = () => {
                 "name": "Fiat Panda Hybrid 2023",
                 "priceCurrency": "EUR",
                 "price": "35",
-                "priceValidUntil": "2025-12-31",
+                "priceValidUntil": "2026-12-31",
                 "availability": "https://schema.org/InStock",
                 "url": "https://aggelosrentals.com/stolos",
                 "itemOffered": {
@@ -148,7 +148,7 @@ const CarRentalSchema = () => {
                 "name": "Jeep Renegade 4x4",
                 "priceCurrency": "EUR",
                 "price": "80",
-                "priceValidUntil": "2025-12-31",
+                "priceValidUntil": "2026-12-31",
                 "availability": "https://schema.org/InStock",
                 "url": "https://aggelosrentals.com/stolos",
                 "itemOffered": {
@@ -168,7 +168,7 @@ const CarRentalSchema = () => {
                 "name": "Mercedes-Benz A-Class",
                 "priceCurrency": "EUR",
                 "price": "150",
-                "priceValidUntil": "2025-12-31",
+                "priceValidUntil": "2026-12-31",
                 "availability": "https://schema.org/InStock",
                 "url": "https://aggelosrentals.com/stolos",
                 "itemOffered": {

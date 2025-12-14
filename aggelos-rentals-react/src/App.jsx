@@ -10,7 +10,10 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import PiraeusPort from './pages/PiraeusPort';
 import AthensAirport from './pages/AthensAirport';
+import AthensCenter from './pages/AthensCenter';
 import AirportToPiraeus from './pages/AirportToPiraeus';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
 
 const AppContent = () => {
@@ -28,7 +31,12 @@ const AppContent = () => {
           {/* Location Pages - Greek */}
           <Route path="locations/piraeus-port" element={<PiraeusPort />} />
           <Route path="locations/athens-airport" element={<AthensAirport />} />
+          <Route path="locations/athens-center" element={<AthensCenter />} />
           <Route path="athens-airport-to-piraeus" element={<AirportToPiraeus />} />
+
+          {/* Blog Pages - Greek */}
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
@@ -44,7 +52,12 @@ const AppContent = () => {
           {/* Location Pages - English */}
           <Route path="locations/piraeus-port" element={<PiraeusPort />} />
           <Route path="locations/athens-airport" element={<AthensAirport />} />
+          <Route path="locations/athens-center" element={<AthensCenter />} />
           <Route path="athens-airport-to-piraeus" element={<AirportToPiraeus />} />
+
+          {/* Blog Pages - English */}
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

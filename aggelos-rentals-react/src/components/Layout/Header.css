@@ -49,9 +49,8 @@
 
 /* Main Navigation */
 .site-header__main {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
+    width: 100%;
+    padding: 0 40px;
     height: 72px;
     display: flex;
     align-items: center;

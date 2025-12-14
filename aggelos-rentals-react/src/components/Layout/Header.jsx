@@ -49,6 +49,7 @@ const Header = () => {
         { path: '/', label: t('nav.home') },
         { path: '/stolos', englishPath: '/fleet', label: t('nav.fleet') },
         { path: '/monthly', label: t('nav.monthlyRental') },
+        { path: '/blog', label: 'Blog' },
         { path: '/epikoinonia', englishPath: '/contact', label: t('nav.contact') },
         { path: '/syxnes-erotiseis', englishPath: '/faq', label: t('nav.faq') },
     ];

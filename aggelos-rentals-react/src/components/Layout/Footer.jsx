@@ -43,6 +43,7 @@ const Footer = () => {
     ];
 
     const companyLinks = [
+        { label: 'Blog', path: '/blog' },
         { label: t('nav.contact'), path: language === 'en' ? '/contact' : '/epikoinonia' },
         { label: t('nav.faq'), path: language === 'en' ? '/faq' : '/syxnes-erotiseis' },
         { label: t('footer.privacy'), path: '/privacy' },
@@ -148,6 +149,9 @@ const Footer = () => {
                                 : 'Car Rental Piraeus | Rent a Car Piraeus Port | Athens Airport Car Rental'}
                         </p>
                     </div>
+                    <p className="footer-credit">
+                        Made by <a href="https://anotherseoguru.com" target="_blank" rel="noreferrer">Anotherseoguru.com</a>
+                    </p>
                 </div>
             </div>
         </footer>

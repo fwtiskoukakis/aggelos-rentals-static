@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../i18n';
 import './Hero.css';
 
@@ -14,13 +15,26 @@ const CheckIcon = () => (
     </svg>
 );
 
+const MapPinIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+    </svg>
+);
+
 const Hero = () => {
-    const { t, language } = useLanguage();
+    const { t, language, getLocalizedPath } = useLanguage();
 
     const trustItems = [
         { key: 'years', icon: '🏆' },
         { key: 'customers', icon: '⭐' },
         { key: 'support', icon: '📞' },
+    ];
+
+    const locationLinks = [
+        { path: '/locations/athens-airport', label: language === 'el' ? 'Αεροδρόμιο' : 'Airport', icon: '✈️' },
+        { path: '/locations/piraeus-port', label: language === 'el' ? 'Λιμάνι Πειραιά' : 'Piraeus Port', icon: '⛴️' },
+        { path: '/locations/athens-center', label: language === 'el' ? 'Κέντρο Αθήνας' : 'Athens Center', icon: '🏛️' },
     ];
 
     return (
@@ -77,6 +91,20 @@ const Hero = () => {
                                 <span>{language === 'el' ? 'Από €35/ημέρα' : 'From €35/day'}</span>
                             </div>
                         </div>
+
+                        {/* Location Quick Links */}
+                        <div className="hero__locations">
+                            <span className="hero__locations-label">
+                                <MapPinIcon /> {language === 'el' ? 'Τοποθεσίες Παραλαβής:' : 'Pickup Locations:'}
+                            </span>
+                            <div className="hero__locations-links">
+                                {locationLinks.map((loc) => (
+                                    <Link key={loc.path} to={getLocalizedPath(loc.path)} className="hero__location-link">
+                                        <span>{loc.icon}</span> {loc.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     {/* Vehicle Image */}
@@ -98,3 +126,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

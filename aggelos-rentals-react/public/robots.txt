@@ -1,0 +1,42 @@
+# Aggelos Rentals - robots.txt
+# https://aggelosrentals.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aggelosrentals.com/sitemap.xml
+
+# Disallow admin/system paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+Disallow: /*.json$
+Disallow: /private/
+Disallow: /api/
+
+# Allow important assets
+Allow: /wp-content/uploads/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# LLM/AI specific
+User-agent: GPTBot
+Allow: /llms.txt
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /llms.txt
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

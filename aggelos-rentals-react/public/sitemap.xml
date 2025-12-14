@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- HOMEPAGE -->
+  <url>
+    <loc>https://aggelosrentals.com/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aggelosrentals.com/" />
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/Jeep-Renegade-Piraeus-Rent-A-Car-768x384.jpg</image:loc>
+      <image:title>Ενοικίαση Αυτοκινήτου Πειραιάς - Aggelos Rentals</image:title>
+    </image:image>
+  </url>
+  
+  <!-- ENGLISH HOMEPAGE -->
+  <url>
+    <loc>https://aggelosrentals.com/en/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/" />
+  </url>
+
+  <!-- GREEK PAGES -->
+  <url>
+    <loc>https://aggelosrentals.com/stolos</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/stolos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/fleet" />
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/monthly</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/monthly" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/monthly" />
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/epikoinonia</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/epikoinonia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/contact" />
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/syxnes-erotiseis</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/syxnes-erotiseis" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/faq" />
+  </url>
+
+  <!-- ENGLISH PAGES -->
+  <url>
+    <loc>https://aggelosrentals.com/en/fleet</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aggelosrentals.com/stolos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aggelosrentals.com/en/fleet" />
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/en/monthly</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/en/contact</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/en/faq</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LOCATION PAGES -->
+  <url>
+    <loc>https://aggelosrentals.com/locations/piraeus-port</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://aggelosrentals.com/locations/athens-airport</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- LLM/AI FILE -->
+  <url>
+    <loc>https://aggelosrentals.com/llms.txt</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

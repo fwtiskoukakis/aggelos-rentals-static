@@ -1,0 +1,42 @@
+/* src/styles/variables.css */
+:root {
+  /* Colors */
+  --primary-blue: #0066CC;
+  --primary-hover: #0052A3;
+  --accent-orange: #FF6B35;
+  --accent-hover: #FF5920;
+  --success-green: #28A745;
+  --error-red: #DC3545;
+  --bg-light: #F8F9FA;
+  --text-dark: #2C3E50;
+  --text-light: #FFFFFF;
+  --text-gray: #555555;
+  --border-color: #E0E0E0;
+
+  /* Typography */
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 28px;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+}

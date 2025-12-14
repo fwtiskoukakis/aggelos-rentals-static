@@ -1,0 +1,117 @@
+{
+    "common": {
+        "brandName": "Aggelos Rentals",
+        "tagline": "Car Rental in Piraeus",
+        "taglineSubtitle": "Daily & Monthly Rental | Delivery to Port & Airport",
+        "bookNow": "Book Now",
+        "callUs": "Call Us",
+        "contactUs": "Contact Us",
+        "learnMore": "Learn More",
+        "viewAll": "View All",
+        "from": "from",
+        "perDay": "/day",
+        "perMonth": "/month",
+        "daily": "Daily",
+        "monthly": "Monthly"
+    },
+    "nav": {
+        "home": "Home",
+        "fleet": "Fleet",
+        "monthlyRental": "Monthly Rental",
+        "locations": "Locations",
+        "piraeusPort": "Piraeus Port",
+        "athensAirport": "Athens Airport",
+        "about": "About",
+        "contact": "Contact",
+        "faq": "FAQ"
+    },
+    "hero": {
+        "title": "Car Rental in Piraeus",
+        "subtitle": "Daily & Monthly Rental",
+        "description": "Delivery to Piraeus Port & Athens Airport in 30 minutes",
+        "cta": "Book Now",
+        "callCta": "Call: +30 698 015 1068"
+    },
+    "trust": {
+        "years": "10+ Years Experience",
+        "customers": "500+ Happy Customers",
+        "support": "24/7 Support"
+    },
+    "benefits": {
+        "title": "Why Choose Us",
+        "noCard": {
+            "title": "No Credit Card Required",
+            "desc": "We accept cash and debit cards"
+        },
+        "delivery": {
+            "title": "30-Min Free Delivery",
+            "desc": "Free delivery to port and airport"
+        },
+        "monthly": {
+            "title": "Monthly from €350",
+            "desc": "Affordable long-term rentals"
+        },
+        "support": {
+            "title": "24/7 Greek Support",
+            "desc": "Always available for you"
+        }
+    },
+    "monthlyRental": {
+        "title": "Monthly Rental",
+        "subtitle": "The best choice for long-term needs",
+        "price": "€350",
+        "period": "/month",
+        "features": {
+            "insurance": "Full Insurance",
+            "km": "2000 km/month",
+            "support": "24/7 Support",
+            "delivery": "Free Delivery"
+        },
+        "cta": "View Vehicles"
+    },
+    "vehicles": {
+        "title": "Our Fleet",
+        "subtitle": "Choose the perfect car",
+        "viewAll": "View all vehicles",
+        "book": "Book",
+        "kmDay": "km/day",
+        "kmMonth": "km/month"
+    },
+    "testimonials": {
+        "title": "What Our Customers Say",
+        "rating": "4.8 out of 5",
+        "reviews": "238 reviews"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers to your questions",
+        "contact": {
+            "title": "Didn't find an answer?",
+            "desc": "Contact us directly"
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We are here to help you 24/7",
+        "phone": "Phone",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "address": "Address",
+        "hours": "Hours",
+        "alwaysOpen": "24 hours, 7 days"
+    },
+    "footer": {
+        "company": "Company",
+        "quickLinks": "Quick Links",
+        "services": "Services",
+        "contactInfo": "Contact",
+        "rights": "All rights reserved",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+    },
+    "404": {
+        "title": "Page Not Found",
+        "desc": "The page you're looking for doesn't exist",
+        "home": "Back to Home"
+    }
+}

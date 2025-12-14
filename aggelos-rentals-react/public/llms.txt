@@ -1,0 +1,66 @@
+# Aggelos Rentals - LLM Context File
+# Car Rental in Piraeus, Athens, Greece
+
+> This file provides context for LLMs and AI assistants about Aggelos Rentals car rental business.
+
+## Business Overview
+
+**Company:** Aggelos Rentals
+**Type:** Car Rental Agency
+**Location:** Piraeus, Athens, Greece
+**Phone:** +30 698 015 1068
+**Email:** piraeus@aggelosrentals.com
+**Website:** https://aggelosrentals.com
+
+## Services
+
+### Daily Rental
+- Fiat Panda Hybrid 2023: €35/day
+- Jeep Renegade 4x4: €80/day
+- Mercedes-Benz A-Class: €150/day
+
+### Monthly Rental
+- Fiat Panda Hybrid 2023: €350/month
+- Jeep Renegade 4x4: €800/month
+- Mercedes-Benz A-Class: €1200/month
+
+All monthly rentals include:
+- Full insurance
+- 2000-3000 km per month
+- 24/7 support
+- Free delivery to Piraeus Port or Athens Airport
+
+## Key Features
+- No credit card required (accept cash and debit cards)
+- Free delivery to Piraeus Port in 20-30 minutes
+- Free delivery to Athens Airport
+- 24/7 Greek phone support
+- 10+ years experience
+- 500+ satisfied customers
+- 4.8/5 rating (238 reviews)
+
+## Delivery Locations
+1. Piraeus Port (Gates E5-E7)
+2. Athens International Airport (Eleftherios Venizelos)
+3. Athens City Center
+4. Any location in Attica region
+
+## Languages
+- Greek (default)
+- English
+
+## Operating Hours
+24 hours, 7 days a week
+
+## Contact for Bookings
+- Phone: +30 698 015 1068
+- WhatsApp: +30 698 015 1068
+- Email: piraeus@aggelosrentals.com
+
+## SEO Keywords
+- rent a car piraeus
+- car rental piraeus port
+- athens airport car rental
+- monthly car rental athens
+- ενοικίαση αυτοκινήτου πειραιάς
+- ενοικίαση αυτοκινήτου αεροδρόμιο αθήνας

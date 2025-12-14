@@ -1,0 +1,253 @@
+/* =============================================
+   HERO SECTION - Premium Sixt-Inspired Design
+   ============================================= */
+
+.hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 60px 0 80px;
+    overflow: hidden;
+}
+
+.hero__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero__text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge */
+.hero__badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 24px;
+}
+
+/* Title */
+.hero__title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+/* Trust Badges */
+.hero__trust {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.hero__trust-icon {
+    font-size: 18px;
+}
+
+/* CTA Buttons */
+.hero__actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hero__cta--primary {
+    background: var(--color-accent);
+    color: white;
+}
+
+.hero__cta--primary:hover {
+    background: var(--color-accent-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero__cta--whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.hero__cta--whatsapp:hover {
+    background: #20bd5a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero__cta svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Features */
+.hero__features {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.hero__feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.hero__feature svg {
+    color: var(--color-accent);
+}
+
+/* Vehicle Image */
+.hero__image {
+    position: relative;
+}
+
+.hero__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero__price-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 24px;
+    background: var(--color-primary);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3);
+}
+
+.hero__price-label {
+    display: block;
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.hero__price-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__trust {
+        justify-content: center;
+    }
+
+    .hero__actions {
+        justify-content: center;
+    }
+
+    .hero__features {
+        justify-content: center;
+    }
+
+    .hero__image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .hero__price-badge {
+        bottom: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 40px 0 60px;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .hero__trust {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .hero__cta {
+        justify-content: center;
+    }
+
+    .hero__features {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero__feature {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,66 @@
+/* =============================================
+   404 NOT FOUND PAGE
+   ============================================= */
+
+.not-found {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-50);
+    padding: 60px 20px;
+}
+
+.not-found__content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.not-found__code {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.not-found__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+}
+
+.not-found__desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+}
+
+.not-found__cta {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.not-found__cta:hover {
+    background: var(--color-primary-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+    .not-found__code {
+        font-size: 5rem;
+    }
+
+    .not-found__title {
+        font-size: 1.5rem;
+    }
+}

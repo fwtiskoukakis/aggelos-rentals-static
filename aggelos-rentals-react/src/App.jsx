@@ -8,6 +8,9 @@ import Fleet from './pages/Fleet';
 import Monthly from './pages/Monthly';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import PiraeusPort from './pages/PiraeusPort';
+import AthensAirport from './pages/AthensAirport';
+import AirportToPiraeus from './pages/AirportToPiraeus';
 import NotFound from './pages/NotFound';
 
 const AppContent = () => {
@@ -21,6 +24,12 @@ const AppContent = () => {
           <Route path="monthly" element={<Monthly />} />
           <Route path="epikoinonia" element={<Contact />} />
           <Route path="syxnes-erotiseis" element={<FAQ />} />
+
+          {/* Location Pages - Greek */}
+          <Route path="locations/piraeus-port" element={<PiraeusPort />} />
+          <Route path="locations/athens-airport" element={<AthensAirport />} />
+          <Route path="athens-airport-to-piraeus" element={<AirportToPiraeus />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
 
@@ -31,6 +40,12 @@ const AppContent = () => {
           <Route path="monthly" element={<Monthly />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
+
+          {/* Location Pages - English */}
+          <Route path="locations/piraeus-port" element={<PiraeusPort />} />
+          <Route path="locations/athens-airport" element={<AthensAirport />} />
+          <Route path="athens-airport-to-piraeus" element={<AirportToPiraeus />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

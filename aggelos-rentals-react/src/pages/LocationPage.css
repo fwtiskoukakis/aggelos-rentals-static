@@ -1,0 +1,297 @@
+/* =============================================
+   LOCATION PAGES - Premium Design
+   ============================================= */
+
+/* Hero Section */
+.location-hero {
+    background: var(--color-dark);
+    color: white;
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.2) 0%, transparent 60%);
+}
+
+.location-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-accent);
+}
+
+.location-hero__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    max-width: 700px;
+}
+
+.location-hero__subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* Content Section */
+.location-content {
+    padding: 60px 0 80px;
+    background: var(--color-gray-50);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+/* Main Content */
+.location-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.location-block {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.location-block h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+}
+
+.location-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+/* Highlight Box */
+.location-highlight {
+    margin-top: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.08) 0%, rgba(0, 102, 204, 0.03) 100%);
+    border: 1px solid rgba(0, 102, 204, 0.15);
+    border-radius: 12px;
+}
+
+.location-highlight h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.location-highlight p {
+    margin-bottom: 16px;
+}
+
+/* Features */
+.location-features {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.location-features h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+.location-features ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.location-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.location-features li svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* CTA */
+.location-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Sidebar */
+.location-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.location-info-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.location-info-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+.location-info-list {
+    list-style: none;
+}
+
+.location-info-list li {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.location-info-list li:last-child {
+    border-bottom: none;
+}
+
+.location-info-list svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.location-info-list strong {
+    display: block;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.location-info-list span {
+    font-size: 14px;
+    color: var(--color-dark);
+}
+
+/* Price Card */
+.location-price-card {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: 28px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.location-price-label {
+    display: block;
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 4px;
+}
+
+.location-price-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.location-price-note {
+    display: block;
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+/* Map */
+.location-map {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.location-map h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .location-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .location-info-card,
+    .location-price-card {
+        flex: 1;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .location-hero {
+        padding: 60px 0 40px;
+    }
+
+    .location-hero__title {
+        font-size: 1.75rem;
+    }
+
+    .location-features ul {
+        grid-template-columns: 1fr;
+    }
+
+    .location-cta {
+        flex-direction: column;
+    }
+
+    .location-cta .btn {
+        width: 100%;
+    }
+
+    .location-sidebar {
+        flex-direction: column;
+    }
+}

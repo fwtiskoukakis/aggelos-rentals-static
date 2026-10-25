@@ -17,8 +17,9 @@ Prepared changes only; no production release or Google Ads activation.
   handoff to phone/WhatsApp have not been verified by the assistant.
 
 ## Measurement that remains unverified
-- GA4 property G-KDKQD655KK and Search Console are not connected to Windsor.
-  Authorization links have been prepared for the user, not completed.
+- Analytics and Search Console connections are complete. Connection alone
+  does not verify the existing measurement tag against the intended data stream.
+  Verify that mapping in Analytics Admin before releasing tracking changes.
 - The test proves application behavior, not receipt in GA4 or Google Ads.
 - WhatsApp opening/phone clicking is contact intent, not a received qualified
   lead, completed call or confirmed rental. Keep it secondary.
@@ -30,4 +31,4 @@ Prepared changes only; no production release or Google Ads activation.
 
 Before release: review the privacy notice against real record retention and
 provider agreements; reconcile remaining legacy pages; verify the final build
-on mobile and test Google-side measurement after authorization.
+on mobile and test receipt of the new events in Google-side measurement.

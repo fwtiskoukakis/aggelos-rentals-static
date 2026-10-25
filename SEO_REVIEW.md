@@ -22,10 +22,10 @@ This is a technical pre-release review, not proof of indexing or a ranking guara
 - Validate XML, JSON-LD, unique page IDs/H1/canonicals, original logo asset,
   named redirect parameters and indexability of all sitemap entries.
 - Git/Vercel preview must finish READY and core paths/sitemap must return 200.
-- Search Console is not connected: Windsor currently exposes Google Ads only.
-  Index coverage, actual queries, rankings, manual actions, external links and
-  real-user Core Web Vitals have not been inspected. No numerical SEO score
-  or Rich Results Test result is claimed.
+- Analytics and Search Console connections are complete. Their private
+  performance data is intentionally excluded from this public repository.
+  Index coverage, manual actions, external links and real-user Core Web Vitals
+  remain unverified. No numerical SEO score or Rich Results Test result is claimed.
 - Before release, verify rendering on a physical mobile device, contact
   handling, sitewide legacy content and actual lead tracking.
 - The legal entity/controller is now user-confirmed. Privacy and basic rental

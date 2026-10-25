@@ -1,6 +1,6 @@
 # Aggelos Rentals - Car Rental Piraeus, Greece
 # Updated: 2026-10-25
-# Website: https://aggelosrentals.com
+# Website: https://www.aggelosrentals.com
 
 # ============================================
 # Standard Web Crawlers
@@ -81,4 +81,4 @@ Crawl-delay: 1
 
 # ============================================
 
-Sitemap: https://aggelosrentals.com/sitemap.xml
+Sitemap: https://www.aggelosrentals.com/sitemap.xml

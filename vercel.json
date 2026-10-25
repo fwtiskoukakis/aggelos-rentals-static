@@ -5,10 +5,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.aggelosrentals.com"
+          "value": "aggelosrentals.com"
         }
       ],
-      "destination": "https://aggelosrentals.com/:path*",
+      "destination": "https://www.aggelosrentals.com/:path*",
       "permanent": true
     },
     {

@@ -17,9 +17,9 @@ Prepared changes only; no production release or Google Ads activation.
   handoff to phone/WhatsApp have not been verified by the assistant.
 
 ## Measurement that remains unverified
-- Analytics and Search Console connections are complete. Connection alone
-  does not verify the existing measurement tag against the intended data stream.
-  Verify that mapping in Analytics Admin before releasing tracking changes.
+- Analytics and Search Console connections are complete. The existing
+  measurement tag was verified against the intended website stream in
+  Analytics Admin. This still does not prove receipt of the new contact event.
 - The test proves application behavior, not receipt in GA4 or Google Ads.
 - WhatsApp opening/phone clicking is contact intent, not a received qualified
   lead, completed call or confirmed rental. Keep it secondary.

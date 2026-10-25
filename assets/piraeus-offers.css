@@ -4,3 +4,6 @@
 .brand{line-height:0;flex-shrink:0}.brand img{display:block;width:180px;max-width:100%;height:auto}.offer-footer .brand{background:#fff;padding:12px;border-radius:8px}.offer-footer .brand img{width:180px}@media(max-width:600px){.offer-header .brand img{width:150px}}
 
 .legal-content h2{font-size:24px;margin-top:36px}.legal-content p,.legal-content li{overflow-wrap:anywhere}.legal-content li{margin-bottom:12px}
+
+/* Comfortable mobile targets and 16px form text for mobile browsers. */
+@media(max-width:600px){.form-grid input,.form-grid select{font-size:16px}.header-row nav a,.offer-footer nav a,.header-call{display:inline-flex;align-items:center;min-height:44px}.header-row nav{gap:4px 18px}.header-call{justify-content:center}}

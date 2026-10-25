@@ -51,10 +51,14 @@
   });
   function track(method) {
     if (!consent) return;
+    var enquiry = document.getElementById('enquiry-form');
+    var rentalField = enquiry && enquiry.elements.namedItem('rental');
+    var selectedType = rentalField && rentalField.value;
     window.gtag('event', 'contact_intent', {
       contact_method: method,
-      rental_type: location.pathname.indexOf('monthly') >= 0 ? 'monthly' :
-        location.pathname.indexOf('product-category') >= 0 ? 'daily' : 'unspecified'
+      rental_type: selectedType === 'monthly' || selectedType === 'daily' ? selectedType :
+        location.pathname.indexOf('monthly') >= 0 ? 'monthly' :
+          location.pathname.indexOf('product-category') >= 0 ? 'daily' : 'unspecified'
     });
   }
   document.addEventListener('click', function (event) {

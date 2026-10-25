@@ -85,3 +85,15 @@ This is a technical pre-release review, not proof of indexing or a ranking guara
 - vehicle/piraeus-port/index.html
 - vehicle/sw123/index.html
 - αθηνα-μηνιαια-ενοικιαση-αυτοκινητου/index.html
+
+## Final legacy-entrypoint reconciliation
+- Rebuilt /about/ and /location/piraeus-port/ with the same original branding,
+  confirmed offers, consent-controlled measurement and legal identity. The port
+  page no longer promises a delivery deadline. Both are in the canonical sitemap
+  and linked from the reviewed footers.
+- Redirected 51 superseded entrypoints (bare, slash and index.html variants)
+  to the relevant reviewed offers, port, FAQ or contact route. Exact matches
+  preserve the real daily car page. Old homepage variants redirect home.
+- Removed noindex headers from redirected routes and the rebuilt port page.
+  The earlier placeholder list above records the initial review, not the final
+  response behavior. The two legal pages remain noindex.

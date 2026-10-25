@@ -19,8 +19,10 @@ Prepared changes only; no production release or Google Ads activation.
 ## Measurement that remains unverified
 - Analytics and Search Console connections are complete. The existing
   measurement tag was verified against the intended website stream in
-  Analytics Admin. This still does not prove receipt of the new contact event.
-- The test proves application behavior, not receipt in GA4 or Google Ads.
+  Analytics Admin. A consented contact_intent test with contact_method phone
+  was subsequently observed in the intended GA4 Realtime report.
+- Isolated tests prove application behavior. GA4 Realtime additionally confirmed
+  receipt of the phone-intent event; this does not prove Google Ads attribution.
 - WhatsApp opening/phone clicking is contact intent, not a received qualified
   lead, completed call or confirmed rental. Keep it secondary.
 - This static project has no email delivery environment configured. No email
@@ -31,4 +33,4 @@ Prepared changes only; no production release or Google Ads activation.
 
 Before release: review the privacy notice against real record retention and
 provider agreements; reconcile remaining legacy pages; verify the final build
-on mobile and test receipt of the new events in Google-side measurement.
+on mobile, including WhatsApp handoff, and Google Ads attribution.

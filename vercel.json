@@ -1,18 +1,938 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "www.aggelosrentals.com"
         }
       ],
-      "destination": "https://aggelosrentals.com/:1",
+      "destination": "https://aggelosrentals.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1%CF%82-%CE%BF%CE%B4%CE%B7%CE%B3%CE%BF%CF%82-2025",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1%CF%82-%CE%BF%CE%B4%CE%B7%CE%B3%CE%BF%CF%82-2025/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1%CF%82-%CE%BF%CE%B4%CE%B7%CE%B3%CE%BF%CF%82-2025/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/home-%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1-%CE%BC%CE%B7%CE%BD%CE%B9%CE%B1%CE%B9%CE%B1-%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1-%CE%BC%CE%B7%CE%BD%CE%B9%CE%B1%CE%B9%CE%B1-%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85/",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1-%CE%BC%CE%B7%CE%BD%CE%B9%CE%B1%CE%B9%CE%B1-%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85/index.html",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%B1%CE%B5%CF%81%CE%BF%CE%B4%CF%81%CE%BF%CE%BC%CE%B9%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%B1%CE%B5%CF%81%CE%BF%CE%B4%CF%81%CE%BF%CE%BC%CE%B9%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%B1%CE%B5%CF%81%CE%BF%CE%B4%CF%81%CE%BF%CE%BC%CE%B9%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BA%CE%B5%CE%BD%CF%84%CF%81%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BA%CE%B5%CE%BD%CF%84%CF%81%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BA%CE%B5%CE%BD%CF%84%CF%81%CE%BF-%CE%B1%CE%B8%CE%B7%CE%BD%CE%B1%CF%82/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BB%CE%B9%CE%BC%CE%B1%CE%BD%CE%B9-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BB%CE%B9%CE%BC%CE%B1%CE%BD%CE%B9-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B5%CE%BD%CE%BF%CE%B9%CE%BA%CE%B9%CE%B1%CF%83%CE%B7-%CE%B1%CF%85%CF%84%CE%BF%CE%BA%CE%B9%CE%BD%CE%B7%CF%84%CE%BF%CF%85-%CE%BB%CE%B9%CE%BC%CE%B1%CE%BD%CE%B9-%CF%80%CE%B5%CE%B9%CF%81%CE%B1%CE%B9%CE%B1/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/drive-a-car-by-yourself-piraeus",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/drive-a-car-by-yourself-piraeus/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/drive-a-car-by-yourself-piraeus/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-drive-a-manual-car",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-drive-a-manual-car/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-drive-a-manual-car/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-rent-a-car",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-rent-a-car/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/2018/08/15/how-to-rent-a-car/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/athens-airport-to-piraeus",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/athens-airport-to-piraeus/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/athens-airport-to-piraeus/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/author/fotiskoukakis_02pzhbbw",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/author/fotiskoukakis_02pzhbbw/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/author/fotiskoukakis_02pzhbbw/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/another-autoparks",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/another-autoparks/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/another-autoparks/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/my-cars",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/my-cars/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park/my-cars/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ενοικιαση-αυτοκινητου-πειραιας-οδηγος-2025",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ενοικιαση-αυτοκινητου-πειραιας-οδηγος-2025/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ενοικιαση-αυτοκινητου-πειραιας-οδηγος-2025/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/cart",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/cart/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/cart/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/cart-2",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/cart-2/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/cart-2/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/category/car",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/category/car/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/category/car/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout-2",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout-2/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout-2/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/automatic",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/automatic/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/automatic/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/manual",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/manual/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox/manual/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/home-ελληνικά",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-ελληνικά/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home-ελληνικά/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/location/akti-themistokleous-104",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/location/akti-themistokleous-104/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/location/akti-themistokleous-104/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/location/any-location-in-athens",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location/any-location-in-athens/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location/any-location-in-athens/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location/athens-airport",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location/athens-airport/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location/athens-airport/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/location",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/location/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/location/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/fiat",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/fiat/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/fiat/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/jeep",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/jeep/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer/jeep/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/my-account",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/my-account/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/my-account/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-2020",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-2020/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-2020/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-hybrid2023",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-hybrid2023/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/fiat-panda-hybrid2023/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-automatic-transmission",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-automatic-transmission/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-automatic-transmission/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-manual-transmission",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-manual-transmission/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-2022-manual-transmission/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-automatic-transmission-full-extra-panorama-open-roof-4x4",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-automatic-transmission-full-extra-panorama-open-roof-4x4/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-automatic-transmission-full-extra-panorama-open-roof-4x4/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-hybrid-4xe-2023-upland",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-hybrid-4xe-2023-upland/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product/jeep-renegade-hybrid-4xe-2023-upland/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/fiat",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/fiat/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/fiat/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/jeep",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/jeep/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/jeep/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop-2",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop-2/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/shop-2/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/steering/left",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/steering/left/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/steering/left/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/car",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/car/",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/car/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/test-woo",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/test-woo/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/test-woo/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-page",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-page/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-page/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/type/car",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/car/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/car/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/city",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/city/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/city/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/suv",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/suv/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/type/suv/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/akti-themistokleous-104",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/akti-themistokleous-104/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/akti-themistokleous-104/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/athens-airport",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/athens-airport/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/athens-airport/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/piraeus-port",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/piraeus-port/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/piraeus-port/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/sw123",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/sw123/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/sw123/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/αθηνα-μηνιαια-ενοικιαση-αυτοκινητου",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/αθηνα-μηνιαια-ενοικιαση-αυτοκινητου/",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/αθηνα-μηνιαια-ενοικιαση-αυτοκινητου/index.html",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-αεροδρομιο-αθηνας",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-αεροδρομιο-αθηνας/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-αεροδρομιο-αθηνας/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-κεντρο-αθηνας",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-κεντρο-αθηνας/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-κεντρο-αθηνας/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-λιμανι-πειραια",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-λιμανι-πειραια/",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/ενοικιαση-αυτοκινητου-λιμανι-πειραια/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact/index.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/athens-monthly-car-rentals/index.html",
+      "destination": "/athens-monthly-car-rentals/",
+      "permanent": true
+    },
+    {
+      "source": "/about/index.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/product-category/rental/car/index.html",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/faq/index.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/location/piraeus-port/index.html",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy-2/index.html",
+      "destination": "/privacy-policy-2/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions/index.html",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/index_old.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index_new.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html.backup",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/piraeus-port-car-rental",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-port-car-rental/",
       "destination": "/location/piraeus-port/",
       "permanent": true
     },
@@ -27,12 +947,22 @@
       "permanent": true
     },
     {
+      "source": "/automatic-car-rental-piraeus/",
+      "destination": "/gearbox/automatic/",
+      "permanent": true
+    },
+    {
       "source": "/automatic-car-rental-piraeus/:path*",
       "destination": "/gearbox/automatic/:path*",
       "permanent": true
     },
     {
       "source": "/piraeus-car-rental-prices",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/piraeus-car-rental-prices/",
       "destination": "/product-category/rental/car/",
       "permanent": true
     },
@@ -47,12 +977,22 @@
       "permanent": true
     },
     {
+      "source": "/vehicle/mercedes-a-class/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
       "source": "/vehicle/mercedes-a-class/:path*",
       "destination": "/product-category/rental/car/:path*",
       "permanent": true
     },
     {
       "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
       "destination": "/",
       "permanent": true
     },
@@ -67,6 +1007,11 @@
       "permanent": true
     },
     {
+      "source": "/type/economy/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
       "source": "/type/economy/:path*",
       "destination": "/product-category/rental/car/:path*",
       "permanent": true
@@ -77,22 +1022,37 @@
       "permanent": true
     },
     {
+      "source": "/type/luxury/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
       "source": "/type/luxury/:path*",
       "destination": "/product-category/rental/car/:path*",
       "permanent": true
     },
     {
       "source": "/suv-rental-piraeus",
-      "destination": "/location/piraeus-port/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/suv-rental-piraeus/",
+      "destination": "/product-category/rental/car/",
       "permanent": true
     },
     {
       "source": "/suv-rental-piraeus/:path*",
-      "destination": "/location/piraeus-port/:path*",
+      "destination": "/product-category/rental/car/",
       "permanent": true
     },
     {
       "source": "/cruise-port-car-rental",
+      "destination": "/location/piraeus-port/",
+      "permanent": true
+    },
+    {
+      "source": "/cruise-port-car-rental/",
       "destination": "/location/piraeus-port/",
       "permanent": true
     },
@@ -103,16 +1063,26 @@
     },
     {
       "source": "/vehicle/jeep-renegade",
-      "destination": "/type/suv/",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/jeep-renegade/",
+      "destination": "/product-category/rental/car/",
       "permanent": true
     },
     {
       "source": "/vehicle/jeep-renegade/:path*",
-      "destination": "/type/suv/:path*",
+      "destination": "/product-category/rental/car/",
       "permanent": true
     },
     {
       "source": "/vehicle/fiat-panda",
+      "destination": "/product-category/rental/car/",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle/fiat-panda/",
       "destination": "/product-category/rental/car/",
       "permanent": true
     },
@@ -127,10 +1097,140 @@
       "permanent": false
     },
     {
+      "source": "/sitemap/",
+      "destination": "/sitemap.html",
+      "permanent": false
+    },
+    {
       "source": "/sitemap/:path*",
       "destination": "/sitemap.html",
       "permanent": false
+    },
+    {
+      "source": "/author-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/auto_park-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/gearbox-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/location-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/manufacturer-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/post_tag-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/product-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/product_cat-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/steering-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/type-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/vehicle-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/aggelos-rentals-react/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/error-page/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/privacy-policy-2",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/privacy-policy-2/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/terms-and-conditions",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/terms-and-conditions/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
     }
   ]
 }
-

@@ -1,5 +1,5 @@
 # Aggelos Rentals - Car Rental Piraeus, Greece
-# Updated: 2025-11-29
+# Updated: 2026-10-25
 # Website: https://aggelosrentals.com
 
 # ============================================
@@ -78,21 +78,7 @@ Crawl-delay: 1
 # ============================================
 # Sitemaps
 # ============================================
-Sitemap: https://aggelosrentals.com/sitemap.xml
-Sitemap: https://aggelosrentals.com/sitemap_index.xml
-Sitemap: https://aggelosrentals.com/page-sitemap.xml
-Sitemap: https://aggelosrentals.com/post-sitemap.xml
-Sitemap: https://aggelosrentals.com/product-sitemap.xml
-Sitemap: https://aggelosrentals.com/location-sitemap.xml
 
 # ============================================
-# LLM Context Information
-# ============================================
-# For AI assistants seeking structured information about our business:
-# See: https://aggelosrentals.com/llms.txt
-# 
-# Business: Aggelos Rentals - Car Rental in Piraeus, Greece
-# Services: Daily & Monthly Car Rental
-# Locations: Piraeus Port (Gate E7), Athens Airport, Athens Center
-# Phone: +30 698 015 1068
-# Email: piraeus@aggelosrentals.com
+
+Sitemap: https://aggelosrentals.com/sitemap.xml

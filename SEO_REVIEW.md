@@ -8,7 +8,7 @@ This is a technical pre-release review, not proof of indexing or a ranking guara
   that referred to redirected rather than translated pages.
 - Legacy root XML sitemaps redirect to the maintained sitemap; the sitemap
   index and robots declaration use absolute canonical URLs.
-- Marked 46 explicit "page in development" routes noindex, follow using HTTP headers.
+- Marked 46 low-value routes noindex, follow using HTTP headers (44 development placeholders and two legal routes subsequently completed as drafts).
   They were not deleted. They can be revised and reintroduced individually.
 - Added noindex headers to exported React source, old homepage variants,
   the HTML backup and the error-page route. Noindex is not access control.
@@ -28,9 +28,10 @@ This is a technical pre-release review, not proof of indexing or a ranking guara
   or Rich Results Test result is claimed.
 - Before release, verify rendering on a physical mobile device, contact
   handling, sitewide legacy content and actual lead tracking.
-- Privacy policy remains incomplete and noindex. The legal entity/controller,
-  retention practices and actual processing must be confirmed before a final
-  privacy notice is published. Do not publish invented legal terms.
+- The legal entity/controller is now user-confirmed. Privacy and basic rental
+  terms are drafted. Retention practices, provider agreements, transfer
+  arrangements and the customer rental/insurance documents require operational
+  review before publication. See LEGAL_REVIEW.md.
 
 ## Primary references
 - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap

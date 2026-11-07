@@ -97,3 +97,35 @@ This is a technical pre-release review, not proof of indexing or a ranking guara
 - Removed noindex headers from redirected routes and the rebuilt port page.
   The earlier placeholder list above records the initial review, not the final
   response behavior. The two legal pages remain noindex.
+
+## Checklist follow-up — 2026-11-07
+
+- Audited all seven canonical sitemap pages: unique titles/descriptions,
+  one H1, sequential heading levels, self-canonicals, JSON-LD parsing,
+  image alt/dimensions, local assets, internal paths and fragment targets pass.
+- Restored the existing Google verification meta token from the legacy airport
+  page to the current homepage. The domain is present in the connected Search
+  Console accounts; this does not assert live ownership-verification status.
+- Consolidated robots.txt to one standard group. Public CSS/JS can be crawled,
+  and redirected legacy routes are no longer blocked from crawler discovery.
+  Existing noindex response headers remain in vercel.json where appropriate.
+- Converted the Picanto and 208 display images to WebP (410,689 to 59,802 bytes;
+  236,154 to 32,522 bytes), updating the three fleet pages and image sitemap.
+  Originals remain available for existing external URLs. Other pages unchanged.
+- Mobile CSS has viewport, responsive grids, touch targets and reserved image
+  dimensions. Real-user Core Web Vitals and a fresh mobile Lighthouse run remain
+  unmeasured; no passing CWV or performance score is claimed.
+
+### Backlink strategy
+
+Prioritize relevant, earned local links to the most useful destination:
+1. Existing Piraeus/Athens accommodation partners: link their guest transport
+   information to /location/piraeus-port/ when port delivery is relevant.
+2. Business partners serving monthly customers: link transport recommendations
+   to /athens-monthly-car-rentals/.
+3. Check the business's owned profiles and legitimate local business listings
+   for consistent name, address, phone and canonical website link.
+4. Ask partners for editorial links only where useful to their customers; use
+   natural brand wording, avoid purchased links, bulk directories and forced
+   keyword anchors. Track placement, destination, referral visits and enquiries.
+No partner messages were sent and no external placements are claimed.

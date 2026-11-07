@@ -1,31 +1,133 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.aggelosrentals.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/Fiat-Panda-2020-600x600.png.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Αντίγραφο-του-Αντίγραφο-του-Insta-Story-Cars-Flyer-210-×-220-mm-Βίντεο-για-κινητά-1-e1728925119355-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/kia-picanto.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/peugeot-208.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Fiat-Panda-March-Offer-e1728925085783-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-manual-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg-zs-automatic-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-automatic.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg3-automatic-2026.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/athens-monthly-car-rentals/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/Fiat-Panda-2020-600x600.png.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Αντίγραφο-του-Αντίγραφο-του-Insta-Story-Cars-Flyer-210-×-220-mm-Βίντεο-για-κινητά-1-e1728925119355-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/kia-picanto.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/peugeot-208.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Fiat-Panda-March-Offer-e1728925085783-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-manual-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg-zs-automatic-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-automatic.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg3-automatic-2026.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/product-category/rental/car/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/Fiat-Panda-2020-600x600.png.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Αντίγραφο-του-Αντίγραφο-του-Insta-Story-Cars-Flyer-210-×-220-mm-Βίντεο-για-κινητά-1-e1728925119355-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/kia-picanto.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/peugeot-208.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2024/10/Fiat-Panda-March-Offer-e1728925085783-768x768.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-manual-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg-zs-automatic-2026.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/citroen-c3-automatic.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/assets/fleet/mg3-automatic-2026.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/contact/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/faq/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/about/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/location/piraeus-port/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
+    <image:image>
+      <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
+    </image:image>
   </url>
 </urlset>

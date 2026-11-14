@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.aggelosrentals.com/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <image:image>
       <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
     </image:image>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/athens-monthly-car-rentals/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <image:image>
       <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
     </image:image>
@@ -125,9 +125,14 @@
   </url>
   <url>
     <loc>https://www.aggelosrentals.com/location/piraeus-port/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <image:image>
       <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
     </image:image>
   </url>
+  <url><loc>https://www.aggelosrentals.com/gearbox/automatic/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://www.aggelosrentals.com/piraeus-rent-a-car/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://www.aggelosrentals.com/monthly-car-rental-piraeus/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://www.aggelosrentals.com/piraeus-port-car-rental/</loc><lastmod>2026-11-14</lastmod></url>
+  <url><loc>https://www.aggelosrentals.com/automatic-car-rental-piraeus/</loc><lastmod>2026-11-14</lastmod></url>
 </urlset>

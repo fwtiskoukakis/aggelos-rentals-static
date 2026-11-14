@@ -148,17 +148,17 @@
     },
     {
       "source": "/athens-airport-to-piraeus",
-      "destination": "/contact/",
+      "destination": "/piraeus-port-car-rental/",
       "permanent": true
     },
     {
       "source": "/athens-airport-to-piraeus/",
-      "destination": "/contact/",
+      "destination": "/piraeus-port-car-rental/",
       "permanent": true
     },
     {
       "source": "/athens-airport-to-piraeus/index.html",
-      "destination": "/contact/",
+      "destination": "/piraeus-port-car-rental/",
       "permanent": true
     },
     {
@@ -309,21 +309,6 @@
     {
       "source": "/checkout-2/index.html",
       "destination": "/contact/",
-      "permanent": true
-    },
-    {
-      "source": "/gearbox/automatic",
-      "destination": "/product-category/rental/car/",
-      "permanent": true
-    },
-    {
-      "source": "/gearbox/automatic/",
-      "destination": "/product-category/rental/car/",
-      "permanent": true
-    },
-    {
-      "source": "/gearbox/automatic/index.html",
-      "destination": "/product-category/rental/car/",
       "permanent": true
     },
     {
@@ -927,36 +912,6 @@
       "permanent": true
     },
     {
-      "source": "/piraeus-port-car-rental",
-      "destination": "/location/piraeus-port/",
-      "permanent": true
-    },
-    {
-      "source": "/piraeus-port-car-rental/",
-      "destination": "/location/piraeus-port/",
-      "permanent": true
-    },
-    {
-      "source": "/piraeus-port-car-rental/:path*",
-      "destination": "/location/piraeus-port/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/automatic-car-rental-piraeus",
-      "destination": "/gearbox/automatic/",
-      "permanent": true
-    },
-    {
-      "source": "/automatic-car-rental-piraeus/",
-      "destination": "/gearbox/automatic/",
-      "permanent": true
-    },
-    {
-      "source": "/automatic-car-rental-piraeus/:path*",
-      "destination": "/gearbox/automatic/:path*",
-      "permanent": true
-    },
-    {
       "source": "/piraeus-car-rental-prices",
       "destination": "/product-category/rental/car/",
       "permanent": true
@@ -988,12 +943,12 @@
     },
     {
       "source": "/en",
-      "destination": "/",
+      "destination": "/piraeus-rent-a-car/",
       "permanent": true
     },
     {
       "source": "/en/",
-      "destination": "/",
+      "destination": "/piraeus-rent-a-car/",
       "permanent": true
     },
     {

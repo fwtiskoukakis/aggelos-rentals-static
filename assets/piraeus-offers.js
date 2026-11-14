@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  // Only contact intent is measured. A click is never reported as generate_lead.
+  // Consented navigation and contact intent only; clicks are never confirmed leads.
   var measurementId = 'G-KDKQD655KK';
   var loaded = false;
   var consent = null;
@@ -61,13 +61,31 @@
           location.pathname.indexOf('product-category') >= 0 ? 'daily' : 'unspecified'
     });
   }
-  document.addEventListener('click', function (event) {
+  function trackLink(event) {
+    if (event.type === 'auxclick' && event.button !== 1) return;
     var link = event.target.closest('a[href]');
     if (!link) return;
-    if (link.href.indexOf('tel:') === 0) track('phone');
-    else if (link.href.indexOf('mailto:') === 0) track('email');
-    else if (link.hostname === 'wa.me') track('whatsapp');
-  });
+    var method = link.protocol === 'tel:' ? 'phone' :
+      link.protocol === 'mailto:' ? 'email' :
+        link.hostname === 'wa.me' ? 'whatsapp' : null;
+    if (method) track(method);
+    if (!consent || !/^https?:$|^tel:$|^mailto:$/.test(link.protocol)) return;
+    var internal = link.origin === location.origin;
+    var maps = link.hostname === 'www.google.com' && link.pathname.indexOf('/maps') === 0;
+    var language = link.getAttribute('hreflang');
+    var card = link.closest('.offer-card');
+    var samePage = internal && link.pathname === location.pathname && !!link.hash;
+    // Never send message contents, form values, query strings, phone numbers or emails.
+    window.gtag('event', 'site_link_click', {
+      link_type: method || (maps ? 'maps' : language ? 'language' :
+        card ? 'vehicle_enquiry' : samePage ? 'anchor' : internal ? 'navigation' : 'external'),
+      link_destination: method || (internal ? link.pathname : link.hostname),
+      link_position: link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'content',
+      page_language: document.documentElement.lang === 'en' ? 'en' : 'el'
+    });
+  }
+  document.addEventListener('click', trackLink);
+  document.addEventListener('auxclick', trackLink);
   var form = document.getElementById('enquiry-form');
   if (!form) return;
   var params = new URLSearchParams(location.search);

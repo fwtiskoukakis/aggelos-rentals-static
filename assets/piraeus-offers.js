@@ -66,6 +66,7 @@
     if (!link) return;
     if (link.href.indexOf('tel:') === 0) track('phone');
     else if (link.href.indexOf('mailto:') === 0) track('email');
+    else if (link.hostname === 'wa.me') track('whatsapp');
   });
   var form = document.getElementById('enquiry-form');
   if (!form) return;

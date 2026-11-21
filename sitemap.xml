@@ -108,7 +108,8 @@
     <image:image>
       <image:loc>https://www.aggelosrentals.com/wp-content/uploads/2023/12/cropped-cropped-Aggelos-Rentals-Logo-1.png</image:loc>
     </image:image>
-  </url>
+  <image:image><image:loc>https://www.aggelosrentals.com/assets/aggelos-rentals-piraeus-storefront.webp</image:loc></image:image>
+</url>
   <url>
     <loc>https://www.aggelosrentals.com/faq/</loc>
     <lastmod>2026-11-20</lastmod>
@@ -135,4 +136,5 @@
   <url><loc>https://www.aggelosrentals.com/monthly-car-rental-piraeus/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://www.aggelosrentals.com/piraeus-port-car-rental/</loc><lastmod>2026-11-20</lastmod><image:image><image:loc>https://www.aggelosrentals.com/assets/piraeus-port-car-rental.webp</image:loc></image:image></url>
   <url><loc>https://www.aggelosrentals.com/automatic-car-rental-piraeus/</loc><lastmod>2026-11-20</lastmod></url>
-<url><loc>https://www.aggelosrentals.com/car-rental-enquiry/</loc><lastmod>2026-11-20</lastmod></url></urlset>
+<url><loc>https://www.aggelosrentals.com/car-rental-enquiry/</loc><lastmod>2026-11-20</lastmod><image:image><image:loc>https://www.aggelosrentals.com/assets/aggelos-rentals-piraeus-storefront.webp</image:loc></image:image>
+</url></urlset>

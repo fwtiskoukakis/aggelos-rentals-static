@@ -5,6 +5,94 @@
       "has": [
         {
           "type": "host",
+          "value": "athensrentacar.com"
+        }
+      ],
+      "destination": "https://www.aggelosrentals.com/athens-monthly-car-rentals/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.athensrentacar.com"
+        }
+      ],
+      "destination": "https://www.aggelosrentals.com/athens-monthly-car-rentals/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "parosairportrentacar.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-airport-rent-a-car-port/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.parosairportrentacar.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-airport-rent-a-car-port/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "rentalcarparos.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-rent-a-car/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rentalcarparos.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-rent-a-car/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "parosrentalcars.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-rent-a-car/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.parosrentalcars.gr"
+        }
+      ],
+      "destination": "https://antiparosrentacar.com/paros-rent-a-car/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
           "value": "aggelosrentals.com"
         }
       ],

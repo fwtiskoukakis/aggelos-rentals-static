@@ -1,0 +1,28 @@
+name: IndexNow
+on:
+  deployment_status:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit current canonical sitemap
+        run: |
+          python3 - <<'PY'
+          import urllib.request, json, xml.etree.ElementTree as ET
+          host = 'www.aggelosrentals.com'
+          key = '8e6b3f2c9a714d50b4e821c67f903ad5'
+          base = 'https://' + host
+          keyurl = base + '/' + key + '.txt'
+          assert urllib.request.urlopen(keyurl, timeout=30).read().decode().strip() == key
+          root = ET.fromstring(urllib.request.urlopen(base + '/sitemap.xml', timeout=30).read())
+          urls = [e.text for e in root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc') if e.text and e.text.startswith(base + '/')]
+          assert urls
+          data = json.dumps(dict(host=host,key=key,keyLocation=keyurl,urlList=urls)).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=data, headers={'Content-Type':'application/json; charset=utf-8'}, method='POST')
+          with urllib.request.urlopen(req, timeout=30) as response:
+              print('IndexNow HTTP', response.status, 'URLs:', len(urls))
+          PY
